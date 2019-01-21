@@ -2,4 +2,4 @@
 ORM - the pentagon model for contingency planning
 
 
-![]('../src/assets/matrix-image.jpg')
+![](https://raw.githubusercontent.com/Ehawk82/Operational-Risk-Management/master/src/assets/matrix-image.bmp)
