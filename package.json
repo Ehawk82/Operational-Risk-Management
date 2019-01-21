@@ -1,0 +1,22 @@
+{
+  "name": "operational-risk-management",
+  "version": "1.0.0",
+  "description": "ORM - the pentagon model for contingency planning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ehawk82/Operational-Risk-Management.git"
+  },
+  "keywords": [
+    "\"\"\u001b[D\u001b''\u001b[DORM\u001b[C\u001b[D'"
+  ],
+  "author": "Ehawk LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ehawk82/Operational-Risk-Management/issues"
+  },
+  "homepage": "https://github.com/Ehawk82/Operational-Risk-Management#readme"
+}
