@@ -3,23 +3,29 @@ html, body {
 	margin: 0;
 	height:100vh;
 	width:100vw;
-	box-shadow: 0 0 2px silver;
+	box-shadow: 0 0 5px inset rgba(80,80,80,0.4);
 }
 body {
 	background-color: black;
 	color:white;
 }
-table, th, tr, td {box-shadow: 0 0 3px silver;}
+hr {
+	border-color:rgba(80,80,80,0.4);
+	width:100px;
+	margin-left:-70px;
+	float:left;
+}
+table, th, td {box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
 table {
 	width:100vw;
 	height:100vh;
 }
-tr:nth-child(1), tr:nth-child(2), tr:nth-child(3), tr:nth-child(4), tr:nth-child(5) {
-    height:18vh;
+tr {
+    height:auto;
+    text-indent: 35px;
+    cursor:pointer;
 }
-tr:nth-child(6) {
-	height: 3vh;
-}
+
 button {
     line-height: 4.52vh;
     width:4.52vh;
