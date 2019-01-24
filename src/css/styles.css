@@ -15,13 +15,13 @@ hr {
 	margin-left:-70px;
 	float:left;
 }
-table, th, td {box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
+table, tr { box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
 table {
 	width:100vw;
-	height:100vh;
+	height:80vh;
 }
 tr {
-    height:auto;
+    
     text-indent: 35px;
     cursor:pointer;
 }
@@ -29,4 +29,17 @@ tr {
 button {
     line-height: 4.52vh;
     width:4.52vh;
+}
+.trs {
+    transition: 1s all;
+
+	background-color: transparent;
+    line-height: 10vh;
+}
+.trs_full {
+	transition: 1s all;
+    
+
+	line-height: 100vh;
+	background-color: pink;
 }

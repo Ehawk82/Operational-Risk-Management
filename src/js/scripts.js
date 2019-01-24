@@ -1,6 +1,7 @@
 var myUI;
 var items = [ "Assess Risks", "Identify Hazards", "Make Risk Decisions", "Implement Controls", "Supervise", "Tools" ];
 
+
 myUI = {
 	init: () => {
 		console.log("init");
@@ -29,19 +30,24 @@ myUI = {
             
        
         for(var i = 0; i < 6; i++) { 
-        	tr = createEle("tr"),
-            hr = createEle("hr");
+        	tr = createEle("tr");
 
-
-        	tr.innerHTML = items[i];
-            tr.appendChild(hr);
-            
+            tr.className = "trs";
+            tr.id = "id_" + i;
+        	tr.innerHTML = "<td>" + items[i] + "</td>";
+            tr.onclick = myUI.trClicked(tr, i);
             t1.appendChild(tr);
         	
         }
         t1.appendChild(b1);
 		body.appendChild(t1);
-	}
+	},
+    trClicked: (tr, i) => {
+         return () => {
+            makeFull(tr);
+            tr.onclick = () => { takeFull(tr) };
+         }
+    }
 };
 
 window.onload = () => {
