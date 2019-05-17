@@ -1,6 +1,6 @@
 {
   "name": "operational-risk-management",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "ORM - the pentagon model for contingency planning",
   "main": "index.js",
   "scripts": {
