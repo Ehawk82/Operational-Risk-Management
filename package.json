@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Ehawk82/Operational-Risk-Management/issues"
   },
-  "homepage": "https://github.com/Ehawk82/Operational-Risk-Management#readme"
+  "homepage": "https://github.com/Ehawk82/Operational-Risk-Management#readme",
+  "devDependencies": {
+    "gScript2019": "git+https://github.com/Ehawk82/gScript2019.git"
+  }
 }
