@@ -3,11 +3,11 @@ html, body {
 	margin: 0;
 	height:100vh;
 	width:100vw;
-	box-shadow: 0 0 5px inset rgba(80,80,80,0.4);
 }
 body {
-	background-color: black;
+	background-color: #D3FBDE;
 	color:white;
+	overflow: hidden;
 }
 hr {
 	border-color:rgba(80,80,80,0.4);
@@ -29,17 +29,39 @@ tr {
 button {
     line-height: 4.52vh;
     width:4.52vh;
+    outline-style: transparent;
 }
-.trs {
-    transition: 1s all;
-
-	background-color: transparent;
-    line-height: 10vh;
+.tCell {
+    transition: 400ms all;
+    position: fixed;
+    display: grid;
+    width: fit-content;
+    top:-100vh;
+    left:-10vw;
+    box-shadow: 0 0 10px #fef inset;
 }
-.trs_full {
-	transition: 1s all;
-    
-
-	line-height: 100vh;
-	background-color: pink;
+.tCell_full {
+	transition: 400ms all;
+    position: fixed;
+    display: grid;
+    width: fit-content;
+    top:0vh;
+    left:0vw;
+    box-shadow: 0 0 10px #fef inset;
+}
+.tCell_full button {
+    margin: 5px;
+    width:50px;
+}
+.arrow2Btn {
+	transition: 200ms all ease;
+	position: fixed;
+	top:-10vh;
+}
+.arrow2Btn_full {
+	transition: 200ms all ease;
+	position: fixed;
+	top:0vh;
+	margin: 5px;
+    width:50px;
 }
