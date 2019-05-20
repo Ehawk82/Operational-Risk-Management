@@ -6,14 +6,19 @@ html, body {
 }
 body {
 	background-color: #D3FBDE;
-	color:white;
+    display: -webkit-box;
 	overflow: hidden;
 }
+::selection { background: transparent; }
 hr {
 	border-color:rgba(80,80,80,0.4);
 	width:100px;
 	margin-left:-70px;
 	float:left;
+}
+h1 {
+	text-indent: 12px;
+    cursor: default;
 }
 table, tr { box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
 table {
@@ -21,7 +26,6 @@ table {
 	height:80vh;
 }
 tr {
-    
     text-indent: 35px;
     cursor:pointer;
 }
@@ -30,12 +34,13 @@ button {
     line-height: 4.52vh;
     width:4.52vh;
     outline-style: transparent;
+    cursor: pointer;
 }
 .tCell {
     transition: 600ms all;
     position: fixed;
     display: grid;
-    width: fit-content;
+    width: 5vw;
     top:-100vh;
     left:-10vw;
     box-shadow: 0 0 10px #fef inset;
@@ -44,24 +49,42 @@ button {
 	transition: 600ms all;
     position: fixed;
     display: grid;
-    width: fit-content;
+    width: 8vw;
     top:0vh;
     left:0vw;
     box-shadow: 0 0 10px #fef inset;
 }
 .tCell_full button {
-    margin: 5px;
-    width:50px;
+    margin: 0 0 10px 0;
+    width:8vw;
+    height: 8vw;
+    border:initial;
+    outline-style: none;
 }
-.arrow2Btn {
-	transition: 200ms all ease;
-	position: fixed;
-	top:-10vh;
+.tCell_full button:disabled {
+    background-color: rgba(0,0,0,0.6);
+    opacity: .6;
+    border:none;
+    outline-style: none;
+
 }
-.arrow2Btn_full {
-	transition: 200ms all ease;
-	position: fixed;
-	top:0vh;
-	margin: 5px;
-    width:50px;
+.pages {
+	transition: 500ms all;
+	position: absolute;
+	height: 100vh;
+	width: 95vw;
+	top:150vh;
+	left:8vw;
+	bottom:0;
+	box-shadow: 0 0 10px black inset;
+}
+.pages_full {
+	transition: 500ms all;
+	position: absolute;
+	height: 100vh;
+	width: 95vw;
+	top:0;
+	left:8vw;
+	bottom:0;
+	box-shadow: 0 0 10px black inset;
 }
