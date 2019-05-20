@@ -32,7 +32,7 @@ button {
     outline-style: transparent;
 }
 .tCell {
-    transition: 400ms all;
+    transition: 600ms all;
     position: fixed;
     display: grid;
     width: fit-content;
@@ -41,7 +41,7 @@ button {
     box-shadow: 0 0 10px #fef inset;
 }
 .tCell_full {
-	transition: 400ms all;
+	transition: 600ms all;
     position: fixed;
     display: grid;
     width: fit-content;
