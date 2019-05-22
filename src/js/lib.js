@@ -1,8 +1,17 @@
-var CommandPost = "<h1>OPERATIONAL RISK MANAGEMENT</h1>";
-    CommandPost += "<p onload='function(){cp.init()}'>&nbsp;</p>";
+var homeUI = {
+	init: function(x){
+		var h1 = createEle("h1"),
+		    tableHolder = createEle("div"),
+		    table = createEle("table");
+        
+        table.className = "ORMtable";
+        table.innerHTML = "table";
 
-var cp = {
-	init: function (){
-console.log("working");
+		tableHolder.className = "tableHolder";
+		tableHolder.append(table);
+
+		h1.innerHTML = "OPERATIONAL RISK MANAGEMENT";
+
+		x.append(h1, tableHolder);
 	}
 }

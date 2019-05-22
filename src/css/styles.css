@@ -1,31 +1,39 @@
+/*DOM*/
+
 html, body {
 	padding: 0;
 	margin: 0;
 	height:100vh;
 	width:100vw;
 }
+
 body {
 	background-color: #D3FBDE;
     display: -webkit-box;
 	overflow: hidden;
 }
+
 ::selection { background: transparent; }
+
 hr {
 	border-color:rgba(80,80,80,0.4);
 	width:100px;
 	margin-left:-70px;
 	float:left;
 }
+
 h1 {
 	text-indent: 12px;
     cursor: default;
 	font-size:100%;
 }
-table, tr { box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
+
 table {
 	width:100vw;
 	height:80vh;
+	display: table;
 }
+
 tr {
     text-indent: 35px;
     cursor:pointer;
@@ -37,24 +45,24 @@ button {
     outline-style: transparent;
     cursor: pointer;
 }
+
+/*CLASS*/
 .tCell {
-    transition: 600ms all;
     position: fixed;
     display: grid;
     width: 5vw;
     top:-100vh;
     left:-10vw;
-    box-shadow: 0 0 10px #fef inset;
 }
+
 .tCell_full {
-	transition: 600ms all;
     position: fixed;
     display: grid;
     width: 8vw;
     top:0vh;
     left:0vw;
-    box-shadow: 0 0 10px #fef inset;
 }
+
 .tCell_full button {
     margin: 0 0 10px 0;
     width:8vw;
@@ -62,6 +70,7 @@ button {
     border:initial;
     outline-style: none;
 }
+
 .tCell_full button:disabled {
     background-color: rgba(0,0,0,0.6);
     opacity: .6;
@@ -69,8 +78,8 @@ button {
     outline-style: none;
 
 }
+
 .pages {
-	transition: 500ms all;
 	position: absolute;
 	background-color: white;
 	height: 100vh;
@@ -78,10 +87,11 @@ button {
 	top:150vh;
 	left:8vw;
 	bottom:0;
-	box-shadow: 0 0 1px black inset,0 0 2px black inset,0 0 3px black inset;
+
 }
+
 .pages_full {
-	transition: 500ms all;
+
 	position: absolute;
 	background-color: white;
 	height: 100vh;
@@ -89,5 +99,16 @@ button {
 	top:0;
 	left:8vw;
 	bottom:0;
-	box-shadow: 0 0 1px black inset,0 0 2px black inset,0 0 3px black inset;
+}
+
+/*ID*/
+
+/*MULTI*/
+
+table, tr, .pages_full, .pages {
+	box-shadow: 0 0 1px green inset,0 0 1px black inset;
+}
+
+.tCell,.tCell_full, .pages, .pages_full {
+	transition: 500ms all;
 }

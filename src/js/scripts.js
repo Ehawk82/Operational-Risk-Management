@@ -29,9 +29,9 @@ myUI = {
             statsPage = createEle("div"),
             homePage = createEle("div");
         
-        homePage.innerHTML = CommandPost;
         homePage.className = "pages";
         homePage.id = "homePage";
+        homePage.onload = homeUI.init(homePage);
 
         statsPage.innerHTML = "<h1>STAT LOG</h1>";
         statsPage.className = "pages";
