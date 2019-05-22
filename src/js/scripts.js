@@ -29,7 +29,7 @@ myUI = {
             statsPage = createEle("div"),
             homePage = createEle("div");
         
-        homePage.innerHTML = "<h1>COMMAND POST</h1>";
+        homePage.innerHTML = CommandPost;
         homePage.className = "pages";
         homePage.id = "homePage";
 

@@ -19,6 +19,7 @@ hr {
 h1 {
 	text-indent: 12px;
     cursor: default;
+	font-size:100%;
 }
 table, tr { box-shadow: 0 0 5px inset rgba(80,80,80,0.4);}
 table {
@@ -71,20 +72,22 @@ button {
 .pages {
 	transition: 500ms all;
 	position: absolute;
+	background-color: white;
 	height: 100vh;
 	width: 95vw;
 	top:150vh;
 	left:8vw;
 	bottom:0;
-	box-shadow: 0 0 10px black inset;
+	box-shadow: 0 0 1px black inset,0 0 2px black inset,0 0 3px black inset;
 }
 .pages_full {
 	transition: 500ms all;
 	position: absolute;
+	background-color: white;
 	height: 100vh;
 	width: 95vw;
 	top:0;
 	left:8vw;
 	bottom:0;
-	box-shadow: 0 0 10px black inset;
+	box-shadow: 0 0 1px black inset,0 0 2px black inset,0 0 3px black inset;
 }
