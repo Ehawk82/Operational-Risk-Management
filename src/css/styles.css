@@ -29,14 +29,13 @@ h1 {
 }
 
 table {
-	width:100vw;
+	width:92vw;
 	height:80vh;
 	display: table;
 }
 
 tr {
     text-indent: 35px;
-    cursor:pointer;
 }
 
 button {
@@ -83,7 +82,7 @@ button {
 	position: absolute;
 	background-color: white;
 	height: 100vh;
-	width: 95vw;
+	width: 92vw;
 	top:150vh;
 	left:8vw;
 	bottom:0;
@@ -91,24 +90,62 @@ button {
 }
 
 .pages_full {
-
 	position: absolute;
 	background-color: white;
 	height: 100vh;
-	width: 95vw;
+	width: 92vw;
 	top:0;
 	left:8vw;
 	bottom:0;
 }
+.tableHolder {
 
+}
+.trs {
+    display: table-row;
+    width:91vw;
+
+}
+.tds {
+	position: static;
+	height:inherit; 
+	width: inherit;
+	top:0;
+	left: 0;
+	display: table-cell;
+	cursor: pointer;
+}
+.tds_full {
+	position: absolute;
+	height: 100vh;
+	width: 92vw;
+	top:0;
+	left: 0;
+	cursor: default;
+	display: -webkit-box;
+}
+.xOut {
+   background-color: white;
+   color:red;
+   position: fixed;
+   right:5px;
+   cursor: pointer;
+   top: 0;
+   line-height: 50px;
+   display: -webkit-box;
+   width: 60px;
+}
 /*ID*/
 
 /*MULTI*/
-
-table, tr, .pages_full, .pages {
-	box-shadow: 0 0 1px green inset,0 0 1px black inset;
+td {
+	text-align: left;
+	background-color: rgba(150,150,150,1);
+}
+tr, td,.pages_full, .pages {
+	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.tCell,.tCell_full, .pages, .pages_full {
-	transition: 500ms all;
+.tCell,.tCell_full, .pages, .pages_full, table, tr, .tds, .tds_full {
+	transition: 600ms all ease-in-out;
 }
