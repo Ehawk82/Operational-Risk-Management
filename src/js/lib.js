@@ -70,10 +70,27 @@ var homeUI = {
                 hazIn = createEle("input"),
                 hazOut = createEle("input"),
                 hazLabel = createEle("label"),
+                hazIn1 = createEle("input"),
+                hazOut1 = createEle("input"),
+                hazLabel1 = createEle("label"),
                 brightsideHolder = createEle("div"),
                 form = createEle("form");
 
             tds.innerHTML = "";
+
+            hazIn1.type = "range";
+            hazIn1.className = "hazIn1";
+            hazIn1.max = 20;
+            hazIn1.value = tdd.gVal;
+            hazIn1.onchange = function(){ return homeUI.saveHazInput1(tds,i,hazIn1,tdd,z,hazOut1) };
+            
+            hazOut1.type = "text";
+            hazOut1.className = "hazOut1";
+            hazOut1.readonly = true;
+            hazOut1.value = hazIn1.value;
+
+            hazLabel1.className = "hazLabel1";
+            hazLabel1.innerHTML = "ARE YOU FAMILIAR WITH THE ENVIRIONMENT?";
 
             hazIn.type = "range";
             hazIn.className = "hazIn";
@@ -98,7 +115,7 @@ var homeUI = {
             input1.onkeyup = function(){ return homeUI.saveInput1(tds, i, input1 , tdd, z) };
             
             hazardHolder.className = "hazardHolder";
-            hazardHolder.append(hazLabel,hazIn,hazOut);
+            hazardHolder.append(hazLabel,hazIn,hazOut,hazLabel1,hazIn1,hazOut1);
             
             brightsideHolder.className = "brightsideHolder";
 
@@ -134,5 +151,12 @@ var homeUI = {
 
 		tdd = parseLS("trs" + z + "tds" + i);
 		hazOut.value = tdd.rVal;
+	},
+	saveHazInput1: function(tds,i,hazIn1,tdd,z,hazOut1) {
+		tdd.gVal = hazIn1.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		hazOut1.value = tdd.gVal;
 	}
 }

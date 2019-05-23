@@ -23,8 +23,6 @@ input[type="text"]{
 label {
 	font-weight: 800;
 	line-height: 36px;
-	display: -webkit-inline-box;
-	margin-right: 10px;
 }
 hr {
 	border-color:rgba(80,80,80,0.4);
@@ -208,30 +206,34 @@ form {
 
     height: 40vh;
     margin-top: 10px;
-    display: flex;
+    display: inline-table;
 
 }
-.hazOut {
-    flex:1;
-
+.hazOut,.hazOut1 {
+width: 5vw;
 }
-.hazIn {
-    flex:2;
-
-
+.hazIn,.hazIn1 {
+width: 5vw;
+  
 }
-.hazLabel {
+.hazLabel,.hazLabel1 {
 	text-indent: 3px;
+	width: 80vw;
+	display:inline-flex;
 	font-size:1.7vw;
-    flex:10;
 }
 /*ID*/
 
 /*MULTI*/
 .hazIn,.hazOut,.hazLabel {
-    width: inherit;
     height: 32px;
-    display: flex;
+    display: inline-block;
+    background-color: rgba(255,255,255,.9);
+    margin: 0;
+}
+.hazIn1,.hazOut1,.hazLabel1 {
+    height: 32px;
+    display: inline-block;
     background-color: rgba(255,255,255,.9);
     margin: 0;
 }
