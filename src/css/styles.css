@@ -12,8 +12,11 @@ body {
     display: -webkit-box;
 	overflow: hidden;
 }
-
-::selection { background: transparent; }
+p {
+	background-color: #fff;
+	margin:0;
+	display: block;
+}
 input[type="text"]{
 	height: 30px;
 	border: 0px solid;
@@ -27,9 +30,7 @@ label {
 }
 hr {
 	border-color:rgba(80,80,80,0.4);
-	width:100px;
-	margin-left:-70px;
-	float:left;
+	width:99%;
 }
 
 h1 {
@@ -41,11 +42,14 @@ h1 {
 table {
 	width:92vw;
 	height:80vh;
-	display: table;
+	display: inline-flex;
+	padding-left: -5px;
+
 }
 
-tr {
-    text-indent: 35px;
+td {
+word-wrap: break-word;
+align-content: center;
 }
 
 button {
@@ -56,7 +60,6 @@ button {
 }
 form {
 	display: inherit;
-	padding-top: 20px;
 	width: inherit;
 
 }
@@ -119,23 +122,23 @@ form {
 
 }
 .trs {
-    display: table-row;
+    display: inline-table;
     width:91vw;
 
 }
 .tds {
 	position: static;
-	height:inherit; 
-	width: inherit;
+	height:14vh; 
+	width: 14.8vw;
 	top:0;
 	left: 0;
-	display: table-cell;
+	display: inline-table;
 	cursor: pointer;
 }
 .tds_full {
-	position: absolute;
+	position: fixed;
 	height: 100vh;
-	width: 92vw;
+	width: 100vw;
 	top:0;
 	left: 0;
 	cursor: default;
@@ -160,9 +163,8 @@ form {
 {
     
 }
-td, form {
+form {
 	text-align: left;
-	background-color: rgba(210,210,210,1);
 }
 tr, td,.pages_full, .pages {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;

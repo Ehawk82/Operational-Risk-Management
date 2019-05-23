@@ -1,10 +1,14 @@
 var tdData = {
-    name: "&nbsp;",
+    name: "",
     info: "",
     level: "",
     elem: "",
     value: "",
     number: "",
+    rVal: 150,
+    gVal: 150,
+    bVal: 150,
+    aVal: 150,
     executable: false
 };
 var homeUI = {
@@ -23,11 +27,16 @@ var homeUI = {
             var z = i;
             for (let i = 0; i < 6; i++) {
             	var tds = createEle("td");
-LSinit("trs" + z + "tds" + i, tdData);
-let tdd = parseLS("trs" + z + "tds" + i);
-            	tds.innerHTML = tdd.name;
+				LSinit("trs" + z + "tds" + i, tdData);
+				let tdd = parseLS("trs" + z + "tds" + i);
+                if (tdd.name === "") {
+                	tds.innerHTML = "<p>&nbsp;</p><hr/>";
+                } else {
+            		tds.innerHTML = "<p>"+tdd.name+"</p><hr/>";
+                }
         		tds.className = "tds";
         		tds.id = "tds" + i;
+        		tds.style.backgroundColor = "rgba("+tdd.rVal+","+tdd.gVal+","+tdd.bVal+","+tdd.aVal+")";
         		tds.onclick = homeUI.cellProtoToDo(tds, i, tdd, z);
 
         		trs.append(tds);
@@ -58,16 +67,18 @@ let tdd = parseLS("trs" + z + "tds" + i);
                 input1 = createEle("input"),
                 form = createEle("form");
             tds.innerHTML = "";
+
             input1.type = "text";
             input1.className = "input1";
             input1.value = tdd.name;
+            input1.placeholder = " WHAT'S YOUR GOAL";
             input1.onkeyup = function(){ return homeUI.saveInput1(tds, i, input1 , tdd, z); }
 
             xOut.innerHTML = "❌";
             xOut.className = "xOut";
             xOut.onclick = homeUI.xOutFunc(tds, tdd);
             
-            label.innerHTML = "HAZARD ";
+            label.innerHTML = "GOAL ";
             
             form.append(label, input1);
 
@@ -75,8 +86,11 @@ let tdd = parseLS("trs" + z + "tds" + i);
 	},
 	xOutFunc: function(tds, tdd){
 		return function(){
-			tds.innerHTML = tdd.name;
-
+            if (tdd.name === "") {
+            	tds.innerHTML = "<p>&nbsp;</p><hr/>";
+            } else {
+        		tds.innerHTML = "<p>"+tdd.name+"</p><hr/>";
+            }
 			setTimeout(function() {
             	takeFull(tds);
 			}, 10)
