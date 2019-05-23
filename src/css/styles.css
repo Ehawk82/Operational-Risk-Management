@@ -149,6 +149,7 @@ form {
 }
 .tds {
 	position: static;
+	background: rgb(150,150,150);
 	height:10vh; 
 	width: inherit;
 	top:0;
@@ -160,6 +161,7 @@ form {
 }
 .tds_full {
 	position: fixed;
+	background: rgb(150,150,150);
 	height: 98vh;
 	width: 98vw;
 	top:0;
@@ -175,7 +177,15 @@ form {
 	display: block;
 	padding: 2px 5px;
 	min-height: 20px;
-	font-size:1vw;
+	font-size:1rem;
+	max-height: 20px;
+	overflow-y: auto;
+}
+.tds_full span {
+	margin:2px 5px;
+	padding: 2px 5px;
+	min-height: 20px;
+	font-size:1rem;
 	max-height: 20px;
 	overflow-y: auto;
 }
@@ -194,17 +204,36 @@ form {
 }
 .hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
+	padding: 2px 2px;
 
     height: 40vh;
     margin-top: 10px;
-    display: inherit;
+    display: flex;
 
+}
+.hazOut {
+    flex:1;
+
+}
+.hazIn {
+    flex:2;
+
+
+}
+.hazLabel {
+	text-indent: 3px;
+	font-size:1.7vw;
+    flex:10;
 }
 /*ID*/
 
 /*MULTI*/
-{
-    
+.hazIn,.hazOut,.hazLabel {
+    width: inherit;
+    height: 32px;
+    display: flex;
+    background-color: rgba(255,255,255,.9);
+    margin: 0;
 }
 form {
 	text-align: left;

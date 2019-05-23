@@ -36,8 +36,8 @@ var homeUI = {
                 }
         		tds.className = "tds";
         		tds.id = "tds" + i;
-        		tds.style.backgroundColor = "rgba("+tdd.rVal+","+tdd.gVal+","+tdd.bVal+","+tdd.aVal+")";
-        		tds.onclick = homeUI.cellProtoToDo(tds, i, tdd, z);
+
+                tds.onclick = homeUI.cellProtoToDo(tds, i, tdd, z);
 
         		trs.append(tds);
             }
@@ -66,19 +66,40 @@ var homeUI = {
                 xOut = createEle("div"),
                 input1 = createEle("input"),
                 hazardHolder = createEle("div"),
+                hazIcon = createEle("span"),
+                hazIn = createEle("input"),
+                hazOut = createEle("input"),
+                hazLabel = createEle("label"),
                 brightsideHolder = createEle("div"),
                 form = createEle("form");
 
             tds.innerHTML = "";
 
+            hazIn.type = "range";
+            hazIn.className = "hazIn";
+            hazIn.max = 20;
+            hazIn.value = tdd.rVal;
+            hazIn.onchange = function(){ return homeUI.saveHazInput(tds,i,hazIn,tdd,z,hazOut) };
+            
+            hazOut.type = "text";
+            hazOut.className = "hazOut";
+            hazOut.readonly = true;
+            hazOut.value = hazIn.value;
+
+            hazLabel.className = "hazLabel";
+            hazLabel.innerHTML = "HOW IMPORTANT IS THIS TASK?";
+            
+            hazIcon.innerHTML = "🚧";
+
             input1.type = "text";
             input1.className = "input1";
             input1.value = tdd.name;
             input1.placeholder = " WHAT'S YOUR GOAL";
-            input1.onkeyup = function(){ return homeUI.saveInput1(tds, i, input1 , tdd, z); }
+            input1.onkeyup = function(){ return homeUI.saveInput1(tds, i, input1 , tdd, z) };
             
             hazardHolder.className = "hazardHolder";
-
+            hazardHolder.append(hazLabel,hazIn,hazOut);
+            
             brightsideHolder.className = "brightsideHolder";
 
             xOut.innerHTML = "❌";
@@ -87,7 +108,7 @@ var homeUI = {
             
             label.innerHTML = "GOAL ";
             
-            form.append(label, input1, hazardHolder, brightsideHolder);
+            form.append(label, input1, hazIcon, hazardHolder, brightsideHolder);
 
 			tds.append(form, xOut);
 	},
@@ -100,14 +121,18 @@ var homeUI = {
             }
 			setTimeout(function() {
             	takeFull(tds);
-			}, 10)
-            
+			}, 10);
 		}
 	},
-	saveInput1: function(tds, i, input1 , tdd, z) {
-        
+	saveInput1: function(tds,i,input1,tdd,z) {
         tdd.name = input1.value;
-
 		saveLS("trs" + z + "tds" + i, tdd);
+	},
+	saveHazInput: function(tds,i,hazIn,tdd,z,hazOut) {
+		tdd.rVal = hazIn.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		hazOut.value = tdd.rVal;
 	}
 }
