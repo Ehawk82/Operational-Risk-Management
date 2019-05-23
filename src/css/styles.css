@@ -8,19 +8,17 @@ html, body {
 }
 
 body {
-	background-color: #D3FBDE;
     display: -webkit-box;
 	overflow: hidden;
 }
 p {
-	background-color: #fff;
-	margin:0;
-	display: block;
+
 }
 input[type="text"]{
 	height: 30px;
 	border: 0px solid;
 	outline-style: none;
+	text-indent: 5px;
 }
 label {
 	font-weight: 800;
@@ -41,15 +39,14 @@ h1 {
 
 table {
 	width:92vw;
-	height:80vh;
-	display: inline-flex;
-	padding-left: -5px;
+	height:auto;
+	display: flex;
 
 }
 
 td {
-word-wrap: break-word;
-align-content: center;
+	word-wrap: break-word;
+	align-content: center;
 }
 
 button {
@@ -62,6 +59,26 @@ form {
 	display: inherit;
 	width: inherit;
 
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
 }
 /*CLASS*/
 .tCell {
@@ -81,7 +98,7 @@ form {
 }
 
 .tCell_full button {
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     width:8vw;
     height: 8vw;
     border:initial;
@@ -114,35 +131,53 @@ form {
 	width: 92vw;
 	top:0;
 	left:8vw;
+	display: flow-root;
 	bottom:0;
     opacity: 1;
 
+
 }
 .tableHolder {
-
+	display: flex;
+	height: 77vh;
 }
 .trs {
     display: inline-table;
-    width:91vw;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 
 }
 .tds {
 	position: static;
-	height:14vh; 
-	width: 14.8vw;
+	height:10vh; 
+	width: inherit;
 	top:0;
 	left: 0;
-	display: inline-table;
+	display: table-row;
 	cursor: pointer;
+	padding:0px;
+	box-shadow: 0 0 1px inset black;
 }
 .tds_full {
 	position: fixed;
-	height: 100vh;
-	width: 100vw;
+	height: 98vh;
+	width: 98vw;
 	top:0;
 	left: 0;
 	cursor: default;
-	display: -webkit-box;
+	display: inherit;
+	padding:2vh 1vw;
+	box-shadow: 0 0 10px inset black;
+}
+.tds p {
+	background-color: #fff;
+	margin:2px 1px;
+	display: block;
+	padding: 2px 5px;
+	min-height: 20px;
+	font-size:1vw;
+	max-height: 20px;
+	overflow-y: auto;
 }
 .xOut {
    color:red;
@@ -155,7 +190,15 @@ form {
    width: 60px;
 }
 .input1 {
-	width: 60vw;
+	width: 40vw;
+}
+.hazardHolder, .brightsideHolder {
+    width: -webkit-fill-available;
+
+    height: 40vh;
+    margin-top: 10px;
+    display: inherit;
+
 }
 /*ID*/
 
@@ -166,7 +209,7 @@ form {
 form {
 	text-align: left;
 }
-tr, td,.pages_full, .pages {
+.brightsideHolder, .hazardHolder, .tableHolder ,table {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 

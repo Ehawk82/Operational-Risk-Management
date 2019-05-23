@@ -30,9 +30,9 @@ var homeUI = {
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
                 if (tdd.name === "") {
-                	tds.innerHTML = "<p>&nbsp;</p><hr/>";
+                	tds.innerHTML = "<p>&nbsp;</p>";
                 } else {
-            		tds.innerHTML = "<p>"+tdd.name+"</p><hr/>";
+            		tds.innerHTML = "<p>"+tdd.name+"</p>";
                 }
         		tds.className = "tds";
         		tds.id = "tds" + i;
@@ -65,7 +65,10 @@ var homeUI = {
             var label = createEle("label"),
                 xOut = createEle("div"),
                 input1 = createEle("input"),
+                hazardHolder = createEle("div"),
+                brightsideHolder = createEle("div"),
                 form = createEle("form");
+
             tds.innerHTML = "";
 
             input1.type = "text";
@@ -73,6 +76,10 @@ var homeUI = {
             input1.value = tdd.name;
             input1.placeholder = " WHAT'S YOUR GOAL";
             input1.onkeyup = function(){ return homeUI.saveInput1(tds, i, input1 , tdd, z); }
+            
+            hazardHolder.className = "hazardHolder";
+
+            brightsideHolder.className = "brightsideHolder";
 
             xOut.innerHTML = "❌";
             xOut.className = "xOut";
@@ -80,16 +87,16 @@ var homeUI = {
             
             label.innerHTML = "GOAL ";
             
-            form.append(label, input1);
+            form.append(label, input1, hazardHolder, brightsideHolder);
 
 			tds.append(form, xOut);
 	},
 	xOutFunc: function(tds, tdd){
 		return function(){
             if (tdd.name === "") {
-            	tds.innerHTML = "<p>&nbsp;</p><hr/>";
+            	tds.innerHTML = "<p>&nbsp;</p>";
             } else {
-        		tds.innerHTML = "<p>"+tdd.name+"</p><hr/>";
+        		tds.innerHTML = "<p>"+tdd.name+"</p>";
             }
 			setTimeout(function() {
             	takeFull(tds);
