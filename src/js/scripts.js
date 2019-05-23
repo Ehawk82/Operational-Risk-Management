@@ -4,7 +4,8 @@ var items = [ "Assess Risks", "Identify Hazards", "Make Risk Decisions", "Implem
 
 myUI = {
 	init: () => {
-		myUI.myLoad();
+        var tdd = parseLS("tdData");
+		myUI.myLoad(tdd);
 	},
 	toggleFullScreen: () => {
         return () => {
@@ -17,7 +18,7 @@ myUI = {
             }
         }
 	},
-	myLoad: () => {
+	myLoad: (tdd) => {
         var tCell = createEle("div"),
             b1 = createEle("button"),
             climateBtn = createEle("button"),
@@ -31,7 +32,7 @@ myUI = {
         
         homePage.className = "pages";
         homePage.id = "homePage";
-        homePage.onload = homeUI.init(homePage);
+        homePage.onload = homeUI.init(homePage,tdd);
 
         statsPage.innerHTML = "<h1>STAT LOG</h1>";
         statsPage.className = "pages";

@@ -14,7 +14,17 @@ body {
 }
 
 ::selection { background: transparent; }
-
+input[type="text"]{
+	height: 30px;
+	border: 0px solid;
+	outline-style: none;
+}
+label {
+	font-weight: 800;
+	line-height: 36px;
+	display: -webkit-inline-box;
+	margin-right: 10px;
+}
 hr {
 	border-color:rgba(80,80,80,0.4);
 	width:100px;
@@ -44,7 +54,12 @@ button {
     outline-style: transparent;
     cursor: pointer;
 }
+form {
+	display: inherit;
+	padding-top: 20px;
+	width: inherit;
 
+}
 /*CLASS*/
 .tCell {
     position: fixed;
@@ -86,7 +101,7 @@ button {
 	top:150vh;
 	left:8vw;
 	bottom:0;
-
+    opacity: 0;
 }
 
 .pages_full {
@@ -97,6 +112,8 @@ button {
 	top:0;
 	left:8vw;
 	bottom:0;
+    opacity: 1;
+
 }
 .tableHolder {
 
@@ -125,7 +142,6 @@ button {
 	display: -webkit-box;
 }
 .xOut {
-   background-color: white;
    color:red;
    position: fixed;
    right:5px;
@@ -135,17 +151,23 @@ button {
    display: -webkit-box;
    width: 60px;
 }
+.input1 {
+	width: 60vw;
+}
 /*ID*/
 
 /*MULTI*/
-td {
+{
+    
+}
+td, form {
 	text-align: left;
-	background-color: rgba(150,150,150,1);
+	background-color: rgba(210,210,210,1);
 }
 tr, td,.pages_full, .pages {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.tCell,.tCell_full, .pages, .pages_full, table, tr, .tds, .tds_full {
-	transition: 600ms all ease-in-out;
+.tCell,.tCell_full, .pages, .pages_full{
+	transition: 100ms all ease-in-out;
 }
