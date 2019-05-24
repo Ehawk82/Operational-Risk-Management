@@ -117,6 +117,9 @@ form {
 	left:8vw;
 	bottom:0;
     opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 .pages_full {
@@ -129,6 +132,8 @@ form {
 	display: flow-root;
 	bottom:0;
     opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .tableHolder {
 	display: flex;
@@ -196,7 +201,7 @@ form {
 	background-color: #fff;
 	margin:2px 1px;
 	display: block;
-	padding: 2px 5px;
+	padding: 3px 8px;
 	min-height: 20px;
 	font-size:1rem;
 	max-height: 20px;
@@ -231,20 +236,20 @@ form {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.hazOut,.hazOut1,.hazOut2,.hazOut3,.hazOut4 {
+.hazOuts,.brOuts {
     flex: 1;
 	width: 1%;
 }
-.hazIn,.hazIn1,.hazIn2,.hazIn3,.hazIn4 {
+.hazIns,.brIns {
 	flex: 3;
 	width: 15%;
 }
-.hazLabel,.hazLabel1,.hazLabel2,.hazLabel3,.hazLabel4 {
+.hazLabels,.brLabels {
 	text-indent: 6px;
 	width: 80%;
 	font-size:1.7vw;
 }
-.hazFolders {
+.hazFolders,.brFolders {
 	width: 100%;
 	display: inline-flex;
 	height: fit-content;
@@ -253,7 +258,7 @@ form {
 /*ID*/
 
 /*MULTI*/
-.hazIn,.hazOut,.hazLabel,.hazIn1,.hazOut1,.hazLabel1,.hazIn2,.hazOut2,.hazLabel2,.hazIn3,.hazOut3,.hazLabel3,.hazIn4,.hazOut4,.hazLabel4 {
+.hazIns,.hazOuts,.hazLabels,.brIns,.brOuts,.brLabels {
     height: 32px;
     display: inline-grid;
     background-color: rgba(255,255,255,.9);

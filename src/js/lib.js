@@ -11,6 +11,12 @@ var tdData = {
     hVal3: 0,
     hVal4: 0,
     redVal: 0,
+    bVal0: 0,
+    bVal1: 0,
+    bVal2: 0,
+    bVal3: 0,
+    bVal4: 0,
+    redVal: 0,
     executable: false
 };
 var homeUI = {
@@ -27,7 +33,7 @@ var homeUI = {
         	trs.className = "trs";
         	trs.id = "trs" + i;
             var z = i;
-            
+
             for (let i = 0; i < 6; i++) {
             	var tds = createEle("td");
 				LSinit("trs" + z + "tds" + i, tdData);
@@ -68,8 +74,6 @@ var homeUI = {
             var label = createEle("label"),
                 xOut = createEle("div"),
                 input1 = createEle("input"),
-                hazardHolder = createEle("div"),
-                saveIcon = createEle("input"),
                 hazIn = createEle("input"),
                 hazOut = createEle("input"),
                 hazLabel = createEle("label"),
@@ -85,120 +89,43 @@ var homeUI = {
                 hazIn4 = createEle("input"),
                 hazOut4 = createEle("input"),
                 hazLabel4 = createEle("label"),
+                hazardHolder = createEle("div"),
                 hazFolder = createEle("div"),
                 hazFolder1 = createEle("div"),
                 hazFolder2 = createEle("div"),
                 hazFolder3 = createEle("div"),
                 hazFolder4 = createEle("div"),
+                brIn = createEle("input"),
+                brOut = createEle("input"),
+                brLabel = createEle("label"),
+                brIn1 = createEle("input"),
+                brOut1 = createEle("input"),
+                brLabel1 = createEle("label"),
+                brIn2 = createEle("input"),
+                brOut2 = createEle("input"),
+                brLabel2 = createEle("label"),
+                brIn3 = createEle("input"),
+                brOut3 = createEle("input"),
+                brLabel3 = createEle("label"),
+                brIn4 = createEle("input"),
+                brOut4 = createEle("input"),
+                brLabel4 = createEle("label"),
+                brFolder = createEle("div"),
+                brFolder1 = createEle("div"),
+                brFolder2 = createEle("div"),
+                brFolder3 = createEle("div"),
+                brFolder4 = createEle("div"),
                 brightsideHolder = createEle("div"),
                 form = createEle("form");
 
             tds.innerHTML = "";
 
-            hazIn4.type = "range";
-            hazIn4.className = "hazIn2";
-            hazIn4.max = 100;
-            hazIn4.value = tdd.hVal4;
-            hazIn4.onchange = function(){ return homeUI.saveHazInput4(tds,i,hazIn4,tdd,z,hazOut4) };
-            
-            hazOut4.type = "text";
-            hazOut4.className = "hazOut1";
-            hazOut4.readOnly = true;
-            hazOut4.value = hazIn4.value;
-
-            hazLabel4.className = "hazLabel1";
-            hazLabel4.innerHTML = "CHANCE OF FAILURE";
-          
-            hazIn3.type = "range";
-            hazIn3.className = "hazIn3";
-            hazIn3.max = 3;
-            hazIn3.value = tdd.hVal3;
-            hazIn3.onchange = function(){ return homeUI.saveHazInput3(tds,i,hazIn3,tdd,z,hazOut3) };
-            
-            hazOut3.type = "text";
-            hazOut3.className = "hazOut3";
-            hazOut3.readOnly = true;
-            hazOut3.value = hazIn3.value;
-
-            hazLabel3.className = "hazLabel3";
-            hazLabel3.innerHTML = "HOW MANY PEOPLE DO NOT WANT YOU TO ACHIEVE THIS GOAL";
-			var bool;
-			if(tdd.hVal2 === "0"){
-				bool = false;
-			} else {
-				bool = true;
-			}
-            hazIn2.type = "range";
-            hazIn2.className = "hazIn2";
-            hazIn2.max = 1;
-            hazIn2.value = tdd.hVal2;
-            hazIn2.onchange = function(){ return homeUI.saveHazInput2(tds,i,hazIn2,tdd,z,hazOut2) };
-            
-            hazOut2.type = "text";
-            hazOut2.className = "hazOut1";
-            hazOut2.readOnly = true;
-            hazOut2.value = bool;
-
-            hazLabel2.className = "hazLabel1";
-            hazLabel2.innerHTML = "HARM TO OTHERS";
-
-            hazIn1.type = "range";
-            hazIn1.className = "hazIn1";
-            hazIn1.max = 10;
-            hazIn1.value = tdd.hVal1;
-            hazIn1.onchange = function(){ return homeUI.saveHazInput1(tds,i,hazIn1,tdd,z,hazOut1) };
-            
-            hazOut1.type = "text";
-            hazOut1.className = "hazOut1";
-            hazOut1.readOnly = true;
-            hazOut1.value = hazIn1.value;
-
-            hazLabel1.className = "hazLabel1";
-            hazLabel1.innerHTML = "OBSERVE ENVIRONMENTAL RISKS";
-
-            hazIn.type = "range";
-            hazIn.className = "hazIn";
-            hazIn.max = 20;
-            hazIn.value = tdd.hVal0;
-            hazIn.onchange = function(){ return homeUI.saveHazInput(tds,i,hazIn,tdd,z,hazOut) };
-            
-            hazOut.type = "text";
-            hazOut.className = "hazOut";
-            hazOut.readOnly = true;
-            hazOut.value = hazIn.value;
-
-            hazLabel.className = "hazLabel";
-            hazLabel.innerHTML = "IMPORTANCE OF TASK";
-
-            saveIcon.className = "saveIcon";
-            saveIcon.value = "💾";
-            saveIcon.type = "button";
-
-            input1.type = "text";
-            input1.className = "input1";
-            input1.value = tdd.name;
-            input1.placeholder = " WHAT'S YOUR GOAL";
-            input1.onkeyup = function(){ return homeUI.saveInput1(tds,i,input1,tdd,z) };
-            
-            hazFolder.className = "hazFolders";
-            hazFolder.append(hazLabel,hazIn,hazOut);
-
-            hazFolder1.className = "hazFolders";
-            hazFolder1.append(hazLabel1,hazIn1,hazOut1);
-            
-            hazFolder2.className = "hazFolders";
-            hazFolder2.append(hazLabel2,hazIn2,hazOut2);
-
-            hazFolder3.className = "hazFolders";
-            hazFolder3.append(hazLabel3,hazIn3,hazOut3);
-
-            hazFolder4.className = "hazFolders";
-            hazFolder4.append(hazLabel4,hazIn4,hazOut4);
             hazardHolder.className = "hazardHolder";
-            hazardHolder.append(hazFolder,hazFolder1,hazFolder2,hazFolder3,hazFolder4);
+            hazardHolder.onload = hazLib.init(tds,i,tdd,z,label,xOut,input1,hazardHolder,hazIn,hazOut,hazLabel,hazIn1,hazOut1,hazLabel1,hazIn2,hazOut2,hazLabel2,hazIn3,hazOut3,hazLabel3,hazIn4,hazOut4,hazLabel4,hazFolder,hazFolder1,hazFolder2,hazFolder3,hazFolder4);
             
             brightsideHolder.className = "brightsideHolder";
-
+            brightsideHolder.onload = brLib.init(tds,i,tdd,z,xOut,brIn,brOut,brLabel,brIn1,brOut1,brLabel1,brIn2,brOut2,brLabel2,brIn3,brOut3,brLabel3,brIn4,brOut4,brLabel4,brFolder,brFolder1,brFolder2,brFolder3,brFolder4,brightsideHolder);
+            
             xOut.innerHTML = "💾";
             xOut.className = "xOut";
             xOut.onclick = homeUI.xOutFunc(tds, tdd);
@@ -266,6 +193,48 @@ var homeUI = {
 
 		tdd = parseLS("trs" + z + "tds" + i);
 		hazOut4.value = tdd.hVal4;
+	},
+	savebrInput: function(tds,i,brIn,tdd,z,brOut) {
+		tdd.bVal0 = brIn.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		brOut.value = tdd.bVal0;
+	},
+	savebrInput1: function(tds,i,brIn1,tdd,z,brOut1) {
+		tdd.bVal1 = brIn1.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		brOut1.value = tdd.bVal1;
+	},
+	savebrInput2: function(tds,i,brIn2,tdd,z,brOut2) {
+		var bool;
+		tdd.bVal2 = brIn2.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		if(tdd.bVal2 === "0"){
+			bool = false;
+		} else {
+			bool = true;
+		}
+
+		brOut2.value = bool;
+	},
+	savebrInput3: function(tds,i,brIn3,tdd,z,brOut3) {
+		tdd.bVal3 = brIn3.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		brOut3.value = tdd.bVal3;
+	},
+	savebrInput4: function(tds,i,brIn4,tdd,z,brOut4) {
+		tdd.bVal4 = brIn4.value;
+		saveLS("trs" + z + "tds" + i, tdd);
+
+		tdd = parseLS("trs" + z + "tds" + i);
+		brOut4.value = tdd.bVal4;
 	}
 
 }
