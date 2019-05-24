@@ -48,8 +48,6 @@ td {
 }
 
 button {
-    line-height: 4.52vh;
-    width:4.52vh;
     outline-style: transparent;
     cursor: pointer;
 }
@@ -108,7 +106,6 @@ form {
     opacity: .6;
     border:none;
     outline-style: none;
-
 }
 
 .pages {
@@ -132,8 +129,6 @@ form {
 	display: flow-root;
 	bottom:0;
     opacity: 1;
-
-
 }
 .tableHolder {
 	display: flex;
@@ -157,6 +152,18 @@ form {
 	padding:0px;
 	box-shadow: 0 0 1px inset black;
 }
+.dBtn {
+	position: relative;
+	top:-25px;
+	right: 0px;
+	display: block;
+	outline-style: none;
+    background-color:transparent;  
+	opacity: 1 !important;
+	z-index: 1;
+    border: none;
+    float: right;  
+}
 .tds_full {
 	position: fixed;
 	background: rgb(150,150,150);
@@ -165,9 +172,25 @@ form {
 	top:0;
 	left: 0;
 	cursor: default;
+	opacity: 1;
+	z-index: 1;
 	display: inherit;
-	padding:2vh 1vw;
+	padding:0vh 1vw;
 	box-shadow: 0 0 10px inset black;
+}
+.tds_locked {
+	position: static;
+	background: rgb(50,50,50);
+	height:10vh; 
+	width: inherit;
+	top:0;
+	left: 0;
+	display: table-row;
+	cursor: pointer;
+	opacity: .8;
+	z-index: 1;
+	padding:0px;
+	box-shadow: 0 0 1px inset black;
 }
 .tds p {
 	background-color: #fff;
@@ -202,41 +225,40 @@ form {
 }
 .hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
-	padding: 2px 2px;
-
-    height: 40vh;
-    margin-top: 10px;
-    display: inline-table;
-
+    height: auto;
+    display: inline-grid;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-.hazOut,.hazOut1 {
-width: 5vw;
+.hazOut,.hazOut1,.hazOut2,.hazOut3,.hazOut4 {
+    flex: 1;
+	width: 1%;
 }
-.hazIn,.hazIn1 {
-width: 5vw;
-  
+.hazIn,.hazIn1,.hazIn2,.hazIn3,.hazIn4 {
+	flex: 3;
+	width: 15%;
 }
-.hazLabel,.hazLabel1 {
-	text-indent: 3px;
-	width: 80vw;
-	display:inline-flex;
+.hazLabel,.hazLabel1,.hazLabel2,.hazLabel3,.hazLabel4 {
+	text-indent: 6px;
+	width: 80%;
 	font-size:1.7vw;
+}
+.hazFolders {
+	width: 100%;
+	display: inline-flex;
+	height: fit-content;
+	margin: 10px 3px;
 }
 /*ID*/
 
 /*MULTI*/
-.hazIn,.hazOut,.hazLabel {
+.hazIn,.hazOut,.hazLabel,.hazIn1,.hazOut1,.hazLabel1,.hazIn2,.hazOut2,.hazLabel2,.hazIn3,.hazOut3,.hazLabel3,.hazIn4,.hazOut4,.hazLabel4 {
     height: 32px;
-    display: inline-block;
+    display: inline-grid;
     background-color: rgba(255,255,255,.9);
     margin: 0;
 }
-.hazIn1,.hazOut1,.hazLabel1 {
-    height: 32px;
-    display: inline-block;
-    background-color: rgba(255,255,255,.9);
-    margin: 0;
-}
+
 form {
 	text-align: left;
 }
@@ -246,4 +268,9 @@ form {
 
 .tCell,.tCell_full, .pages, .pages_full{
 	transition: 100ms all ease-in-out;
+}
+{
+	box-shadow: 0 0 .1px inset black,0 0 .1px inset black;
+    height: 35px;
+
 }
