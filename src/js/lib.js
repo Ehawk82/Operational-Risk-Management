@@ -11,7 +11,7 @@ var tdData = {
     hVal3: 0,
     hVal4: 0,
     redVal: 0,
-    executable: true
+    executable: false
 };
 var homeUI = {
 	init: function(x,tdd){
@@ -21,45 +21,26 @@ var homeUI = {
 		    table = createEle("table");
         
         table.className = "ORMtable";
-
         for(let i = 0; i < 6; i++){
         	var trs = createEle("tr");
         	    
         	trs.className = "trs";
         	trs.id = "trs" + i;
-
             var z = i;
-
+            
             for (let i = 0; i < 6; i++) {
-            	var tds = createEle("td"),
-            		pName = createEle("p"), chk,
-            	    dBtn = createEle("button");
-
+            	var tds = createEle("td");
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
-                
                 if (tdd.name === "") {
-
-                	pName.innerHTML = "&nbsp;";
-
-                	chk = "";//🔲
-
+                	tds.innerHTML = "<p>&nbsp;</p>";
                 } else {
-
-                	pName.innerHTML = tdd.name;
-
-                	chk = "🔳";
-
+            		tds.innerHTML = "<p>"+tdd.name+"</p>";
                 }
-
-                dBtn.className = "dBtn";
-                dBtn.innerHTML = chk;
-                dBtn.onclick = homeUI.disableTDSfunc(tds, i, tdd, z,pName,dBtn);
-                
-                pName.onclick = homeUI.cellProtoToDo(tds, i, tdd, z,pName,dBtn);
-            		
-                tds.append(pName,dBtn);
         		tds.className = "tds";
+        		tds.id = "tds" + i;
+
+                tds.onclick = homeUI.cellProtoToDo(tds, i, tdd, z);
 
         		trs.append(tds);
             }
@@ -73,33 +54,17 @@ var homeUI = {
 
 		x.append(h1, tableHolder);
 	},
-	disableTDSfunc: function(tds,i,tdd,z,pName,dBtn){
-return function() {
-    if(dBtn.innerHTML === "🔳"){
-      dBtn.innerHTML = "🔲";
-      makeLock(tds);
-      pName.onclick= null;
-    } else if(dBtn.innerHTML === "🔲") {
-      dBtn.innerHTML = "🔳";
-      takeLock(tds);
-      pName.onclick = homeUI.cellProtoToDo(tds,i,tdd,z,pName,dBtn);
-            	
-    }
-}
-			
-		
-	},
-	cellProtoToDo: function(tds, i, tdd, z,pName,dBtn) {
+	cellProtoToDo: function(tds, i, tdd, z) {
     	return function() {
           	if (tds.className === "tds_full") {
           		return false;
           	} else {
           		makeFull(tds);
-          		homeUI.runToDo(tds,i,tdd,z,pName,dBtn);
+          		homeUI.runToDo(tds, i, tdd, z);
 			}
     	}
 	},
-	runToDo: function(tds,i,tdd,z,pName,dBtn){
+	runToDo: function(tds, i, tdd, z){
             var label = createEle("label"),
                 xOut = createEle("div"),
                 input1 = createEle("input"),
@@ -126,7 +91,7 @@ return function() {
                 hazFolder3 = createEle("div"),
                 hazFolder4 = createEle("div"),
                 brightsideHolder = createEle("div"),
-                form = createEle("div");
+                form = createEle("form");
 
             tds.innerHTML = "";
 
@@ -236,7 +201,7 @@ return function() {
 
             xOut.innerHTML = "💾";
             xOut.className = "xOut";
-            xOut.onclick = homeUI.xOutFunc(tds,i,tdd,z,pName,dBtn);
+            xOut.onclick = homeUI.xOutFunc(tds, tdd);
             
             label.innerHTML = "GOAL ";
             
@@ -244,12 +209,12 @@ return function() {
 
 			tds.append(form, xOut);
 	},
-	xOutFunc: function(tds,i,tdd,z,pName,dBtn){
+	xOutFunc: function(tds, tdd){
 		return function(){
             if (tdd.name === "") {
             	tds.innerHTML = "<p>&nbsp;</p>";
             } else {
-        		tds.append(form, xOut);
+        		tds.innerHTML = "<p>"+tdd.name+"</p>";
             }
 			setTimeout(function() {
             	takeFull(tds);
