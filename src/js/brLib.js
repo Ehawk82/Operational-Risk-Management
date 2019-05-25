@@ -12,7 +12,7 @@ var brLib = {
         brOut4.value = brIn4.value;
 
         brLabel4.className = "brLabels";
-        brLabel4.innerHTML = "CHANCE OF FAILURE";
+        brLabel4.innerHTML = "CHANCE OF SUCCESS";
       
         brIn3.type = "range";
         brIn3.className = "brIns";
@@ -26,7 +26,7 @@ var brLib = {
         brOut3.value = brIn3.value;
 
         brLabel3.className = "brLabels";
-        brLabel3.innerHTML = "HOW MANY PEOPLE DO NOT WANT YOU TO ACHIEVE THIS GOAL";
+        brLabel3.innerHTML = "HOW MANY PEOPLE WANT YOU TO ACHIEVE THIS GOAL";
 		var bool;
 		if(tdd.hVal2 === "0"){
 			bool = false;
@@ -46,7 +46,7 @@ var brLib = {
         brOut2.value = bool;
 
         brLabel2.className = "brLabels";
-        brLabel2.innerHTML = "HARM TO OTHERS";
+        brLabel2.innerHTML = "WILL THIS SAVE A LIFE";
 
         brIn1.type = "range";
         brIn1.className = "brIns";
@@ -60,7 +60,7 @@ var brLib = {
         brOut1.value = brIn1.value;
 
         brLabel1.className = "brLabels";
-        brLabel1.innerHTML = "OBSERVE ENVIRONMENTAL RISKS";
+        brLabel1.innerHTML = "ASSET SUPPORT";
 
         brIn.type = "range";
         brIn.className = "brIns";
@@ -74,7 +74,7 @@ var brLib = {
         brOut.value = brIn.value;
 
         brLabel.className = "brLabels";
-        brLabel.innerHTML = "IMPORTANCE OF TASK";
+        brLabel.innerHTML = "LUXURY OF TIME";
 
         brFolder.className = "brFolders";
         brFolder.append(brLabel,brIn,brOut);

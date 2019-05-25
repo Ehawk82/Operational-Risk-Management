@@ -10,19 +10,18 @@ html, body {
 body {
     display: -webkit-box;
 	overflow: hidden;
+
 }
 p {
 
 }
 input[type="text"]{
-	height: 30px;
 	border: 0px solid;
 	outline-style: none;
 	text-indent: 5px;
 }
 label {
-	font-weight: 800;
-	line-height: 36px;
+	font-weight: 400;
 }
 hr {
 	border-color:rgba(80,80,80,0.4);
@@ -52,8 +51,7 @@ button {
     cursor: pointer;
 }
 form {
-	display: inherit;
-	width: inherit;
+	
 
 }
 ::-webkit-scrollbar {
@@ -132,8 +130,7 @@ form {
 	display: flow-root;
 	bottom:0;
     opacity: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
+    
 }
 .tableHolder {
 	display: flex;
@@ -156,6 +153,7 @@ form {
 	cursor: pointer;
 	padding:0px;
 	box-shadow: 0 0 1px inset black;
+
 }
 .dBtn {
 	position: relative;
@@ -172,16 +170,23 @@ form {
 .tds_full {
 	position: fixed;
 	background: rgb(150,150,150);
-	height: 98vh;
-	width: 98vw;
+	height: 100vh;
+	width: 100vw;
 	top:0;
 	left: 0;
 	cursor: default;
+
 	opacity: 1;
 	z-index: 1;
 	display: inherit;
-	padding:0vh 1vw;
+	padding:0vh 0vw;
 	box-shadow: 0 0 10px inset black;
+}
+.tds_full form {
+    display: flex;
+    flex-direction: column;
+	width: inherit;
+	height: inherit;
 }
 .tds_locked {
 	position: static;
@@ -206,6 +211,7 @@ form {
 	font-size:1rem;
 	max-height: 20px;
 	overflow-y: auto;
+
 }
 .tds_full span {
 	margin:2px 5px;
@@ -218,23 +224,29 @@ form {
 .xOut {
    color:red;
    position: fixed;
-   right:5px;
+   right:0;
    cursor: pointer;
-   top: 0;
+   top: 2px;
    line-height: 50px;
    display: -webkit-box;
-   width: 60px;
+   width: 10vw;
+   text-indent: 3vw;
 }
 .input1 {
-	width: 40vw;
+	width: 90vw;
+    line-height: 42px;
+    margin-top: 6px;
+
 }
 .hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
-    height: auto;
-    margin: 10px 0;
-    display: inline-grid;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    height: inherit;
+    margin: 20px 50px;
+    display: inherit;
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 .hazOuts,.brOuts {
     flex: 1;
@@ -245,30 +257,33 @@ form {
 	width: 15%;
 }
 .hazLabels,.brLabels {
-	text-indent: 6px;
-	width: 80%;
-	font-size:1.7vw;
+	width: 60%;
+	font-size:100%;
+	overflow:auto;
+	padding: 5px;
+	word-wrap: break-word;
 }
 .hazFolders,.brFolders {
 	width: 100%;
 	display: inline-flex;
+    height: auto;
+	flex:1;
 	height: fit-content;
-	margin: 10px 3px;
+	margin: 1px 0;
 }
 /*ID*/
 
 /*MULTI*/
 .hazIns,.hazOuts,.hazLabels,.brIns,.brOuts,.brLabels {
-    height: 32px;
+    height: auto;
     display: inline-grid;
     background-color: rgba(255,255,255,.9);
-    margin: 0;
 }
 
 form {
 	text-align: left;
 }
-.brightsideHolder, .hazardHolder, .tableHolder ,table {
+.tableHolder ,table {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
