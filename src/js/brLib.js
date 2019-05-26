@@ -28,7 +28,7 @@ var brLib = {
         brLabel3.className = "brLabels";
         brLabel3.innerHTML = "HOW MANY PEOPLE WANT YOU TO ACHIEVE THIS GOAL";
 		var bool;
-		if(tdd.hVal2 === 0){
+		if(tdd.bVal2 === 0){
 			bool = false;
 		} else {
 			bool = true;

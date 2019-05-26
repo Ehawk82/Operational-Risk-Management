@@ -38,7 +38,6 @@ h1 {
 table {
 	width:92vw;
 	height:auto;
-	display: flex;
 
 }
 
@@ -57,6 +56,7 @@ form {
 }
 ::-webkit-scrollbar {
     width: 6px;
+
 }
 
 /* Track */
@@ -76,6 +76,9 @@ form {
   background: #b30000; 
 }
 /*CLASS*/
+.ORMtable {
+	display: contents;
+}
 .tCell {
     position: fixed;
     display: grid;
@@ -135,7 +138,7 @@ form {
 }
 .tableHolder {
 	display: flex;
-	height: 77vh;
+	height: auto;
 }
 .trs {
     display: inline-table;
@@ -150,7 +153,7 @@ form {
 	width: inherit;
 	top:0;
 	left: 0;
-	display: table-row;
+	display: table-caption;
 	cursor: pointer;
 	padding:0px;
 	box-shadow: 0 0 1px inset black;
@@ -219,7 +222,7 @@ form {
 .hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
     height: inherit;
-    margin: 20px 10px;
+    margin: 20px 5px;
     display: inherit;
     flex:2;
     display: flex;
@@ -229,17 +232,20 @@ form {
 .hazOuts,.brOuts {
     flex: 2;
 	width: 2%;
+	min-width: 60px;
 	text-align: right;
 	padding: 5px 10px;
 	cursor: default;
 }
 .hazIns,.brIns {
 	flex: 3;
+	
 	width: 13%;
 	margin: auto 2vw;
+	min-width: 100px;
 }
 .hazLabels,.brLabels {
-	width: 50%;
+	width: 60%;
 	font-size:100%;
 	overflow:auto;
 	padding: 5px;
@@ -290,23 +296,22 @@ form {
   outline: none;
   opacity: 1;
   -webkit-transition: .2s;
-  padding: 0 40px ;
+  padding: 0 10px;
   transition: opacity .2s;
 }
 
 .hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 30px;
-  height: 30px;
-  background: #4CAF50;
-  border-radius: 3px;
+  width: 15px;
+  height: 10px;
+  border-radius: 1px;
+  background: rgba(255,255,255,.9);
   cursor: pointer;
 }
 
 .hazIns::-moz-range-thumb,.brIns::-moz-range-thumb {
-  width: 25px;
+  width: 100%;
   height: 25px;
-  background: #4CAF50;
   cursor: pointer;
 }
