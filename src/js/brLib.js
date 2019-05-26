@@ -16,7 +16,7 @@ var brLib = {
       
         brIn3.type = "range";
         brIn3.className = "brIns";
-        brIn3.max = 3;
+        brIn3.max = 15;
         brIn3.value = tdd.bVal3;
         brIn3.onchange = function(){ return homeUI.savebrInput3(tds,i,brIn3,tdd,z,brOut3) };
         
@@ -36,7 +36,8 @@ var brLib = {
 
         brIn2.type = "range";
         brIn2.className = "brIns";
-        brIn2.max = 1;
+        brIn2.max = 100;
+        brIn2.step = 100;
         brIn2.value = tdd.bVal2;
         brIn2.onchange = function(){ return homeUI.savebrInput2(tds,i,brIn2,tdd,z,brOut2) };
         
@@ -50,7 +51,7 @@ var brLib = {
 
         brIn1.type = "range";
         brIn1.className = "brIns";
-        brIn1.max = 10;
+        brIn1.max = 20;
         brIn1.value = tdd.bVal1;
         brIn1.onchange = function(){ return homeUI.savebrInput1(tds,i,brIn1,tdd,z,brOut1) };
         

@@ -16,7 +16,7 @@ var hazLib = {
               
                 hazIn3.type = "range";
                 hazIn3.className = "hazIns";
-                hazIn3.max = 3;
+                hazIn3.max = 15;
                 hazIn3.value = tdd.hVal3;
                 hazIn3.onchange = function(){ return homeUI.saveHazInput3(tds,i,hazIn3,tdd,z,hazOut3) };
                 
@@ -36,7 +36,8 @@ var hazLib = {
 
                 hazIn2.type = "range";
                 hazIn2.className = "hazIns";
-                hazIn2.max = 1;
+                hazIn2.max = 100;
+                hazIn2.step = 100;
                 hazIn2.value = tdd.hVal2;
                 hazIn2.onchange = function(){ return homeUI.saveHazInput2(tds,i,hazIn2,tdd,z,hazOut2) };
                 
@@ -50,7 +51,7 @@ var hazLib = {
 
                 hazIn1.type = "range";
                 hazIn1.className = "hazIns";
-                hazIn1.max = 10;
+                hazIn1.max = 20;
                 hazIn1.value = tdd.hVal1;
                 hazIn1.onchange = function(){ return homeUI.saveHazInput1(tds,i,hazIn1,tdd,z,hazOut1) };
                 

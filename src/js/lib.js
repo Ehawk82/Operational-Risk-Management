@@ -15,9 +15,10 @@ var tdData = {
     bVal2: 0,
     bVal3: 0,
     bVal4: 0,
-    redVal: 0,
+    redVal: 255,
     greenVal: 0,
     blueVal: 0,
+    alphaVal: 1,
     notes: {},
     executable: false
 };
@@ -41,9 +42,9 @@ var homeUI = {
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
                 if (tdd.name === "") {
-                	tds.innerHTML = "<p>&nbsp;</p>";
+                	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+","+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
                 } else {
-            		tds.innerHTML = "<p>"+tdd.name+"</p><div >&nbsp;</div>";
+            		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+","+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
                 }
         		tds.className = "tds";
         		tds.id = "tds" + i;
@@ -123,7 +124,7 @@ var homeUI = {
 
             hazardHolder.className = "hazardHolder";
             hazardHolder.onload = hazLib.init(tds,i,tdd,z,xOut,input1,hazardHolder,hazIn,hazOut,hazLabel,hazIn1,hazOut1,hazLabel1,hazIn2,hazOut2,hazLabel2,hazIn3,hazOut3,hazLabel3,hazIn4,hazOut4,hazLabel4,hazFolder,hazFolder1,hazFolder2,hazFolder3,hazFolder4);
-             
+            
             brightsideHolder.className = "brightsideHolder";
             brightsideHolder.onload = brLib.init(tds,i,tdd,z,xOut,brIn,brOut,brLabel,brIn1,brOut1,brLabel1,brIn2,brOut2,brLabel2,brIn3,brOut3,brLabel3,brIn4,brOut4,brLabel4,brFolder,brFolder1,brFolder2,brFolder3,brFolder4,brightsideHolder);
             
@@ -140,9 +141,9 @@ var homeUI = {
 	xOutFunc: function(tds, tdd){
 		return function(){
             if (tdd.name === "") {
-            	tds.innerHTML = "<p>&nbsp;</p>";
+            	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+","+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
             } else {
-        		tds.innerHTML = "<p>"+tdd.name+"</p>";
+        		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+","+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
             }
 			setTimeout(function() {
             	takeFull(tds);
@@ -151,10 +152,14 @@ var homeUI = {
 	},
 	saveInput1: function(tds,i,input1,tdd,z) {
         tdd.name = input1.value;
+        tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 	},
 	saveHazInput: function(tds,i,hazIn,tdd,z,hazOut) {
 		tdd.hVal0 = hazIn.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -162,6 +167,8 @@ var homeUI = {
 	},
 	saveHazInput1: function(tds,i,hazIn1,tdd,z,hazOut1) {
 		tdd.hVal1 = hazIn1.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -170,6 +177,8 @@ var homeUI = {
 	saveHazInput2: function(tds,i,hazIn2,tdd,z,hazOut2) {
 		var bool;
 		tdd.hVal2 = hazIn2.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -183,6 +192,8 @@ var homeUI = {
 	},
 	saveHazInput3: function(tds,i,hazIn3,tdd,z,hazOut3) {
 		tdd.hVal3 = hazIn3.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -190,6 +201,8 @@ var homeUI = {
 	},
 	saveHazInput4: function(tds,i,hazIn4,tdd,z,hazOut4) {
 		tdd.hVal4 = hazIn4.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -197,6 +210,8 @@ var homeUI = {
 	},
 	savebrInput: function(tds,i,brIn,tdd,z,brOut) {
 		tdd.bVal0 = brIn.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -204,6 +219,8 @@ var homeUI = {
 	},
 	savebrInput1: function(tds,i,brIn1,tdd,z,brOut1) {
 		tdd.bVal1 = brIn1.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -212,6 +229,8 @@ var homeUI = {
 	savebrInput2: function(tds,i,brIn2,tdd,z,brOut2) {
 		var bool;
 		tdd.bVal2 = brIn2.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -225,6 +244,8 @@ var homeUI = {
 	},
 	savebrInput3: function(tds,i,brIn3,tdd,z,brOut3) {
 		tdd.bVal3 = brIn3.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -232,6 +253,8 @@ var homeUI = {
 	},
 	savebrInput4: function(tds,i,brIn4,tdd,z,brOut4) {
 		tdd.bVal4 = brIn4.value;
+		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
+		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
