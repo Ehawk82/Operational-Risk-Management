@@ -251,6 +251,8 @@ form {
 .hazOuts,.brOuts {
     flex: 1;
 	width: 1%;
+	text-align: right;
+	padding-right: 10px;
 }
 .hazIns,.brIns {
 	flex: 3;
