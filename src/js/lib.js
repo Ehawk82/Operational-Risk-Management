@@ -10,13 +10,15 @@ var tdData = {
     hVal2: 0,
     hVal3: 0,
     hVal4: 0,
-    redVal: 0,
     bVal0: 0,
     bVal1: 0,
     bVal2: 0,
     bVal3: 0,
     bVal4: 0,
     redVal: 0,
+    greenVal: 0,
+    blueVal: 0,
+    notes: {},
     executable: false
 };
 var homeUI = {
