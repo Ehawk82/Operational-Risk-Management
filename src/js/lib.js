@@ -41,7 +41,7 @@ var homeUI = {
                 if (tdd.name === "") {
                 	tds.innerHTML = "<p>&nbsp;</p>";
                 } else {
-            		tds.innerHTML = "<p>"+tdd.name+"</p>";
+            		tds.innerHTML = "<p>"+tdd.name+"</p><div >&nbsp;</div>";
                 }
         		tds.className = "tds";
         		tds.id = "tds" + i;

@@ -21,7 +21,7 @@ input[type="text"]{
 	text-indent: 5px;
 }
 label {
-	font-weight: 400;
+	font-weight: 500;
 }
 hr {
 	border-color:rgba(80,80,80,0.4);
@@ -188,20 +188,7 @@ form {
 	width: inherit;
 	height: inherit;
 }
-.tds_locked {
-	position: static;
-	background: rgb(50,50,50);
-	height:10vh; 
-	width: inherit;
-	top:0;
-	left: 0;
-	display: table-row;
-	cursor: pointer;
-	opacity: .8;
-	z-index: 1;
-	padding:0px;
-	box-shadow: 0 0 1px inset black;
-}
+
 .tds p {
 	background-color: #fff;
 	margin:2px 1px;
@@ -233,9 +220,10 @@ form {
    text-indent: 3vw;
 }
 .input1 {
-	width: 90vw;
+	width: 89vw;
     line-height: 42px;
     margin-top: 6px;
+    margin-left: 1vw;
 
 }
 .hazardHolder, .brightsideHolder {
@@ -252,11 +240,13 @@ form {
     flex: 1;
 	width: 1%;
 	text-align: right;
-	padding-right: 10px;
+	padding: 5px 10px;
+cursor: default;
 }
 .hazIns,.brIns {
 	flex: 3;
 	width: 15%;
+	margin: auto 2vw;
 }
 .hazLabels,.brLabels {
 	width: 60%;
@@ -264,11 +254,12 @@ form {
 	overflow:auto;
 	padding: 5px;
 	word-wrap: break-word;
+
 }
 .hazFolders,.brFolders {
 	width: 100%;
 	display: inline-flex;
-    height: auto;
+    height: inherit;
 	flex:1;
 	height: fit-content;
 	margin: 1px 0;
@@ -276,9 +267,10 @@ form {
 /*ID*/
 
 /*MULTI*/
-.hazIns,.hazOuts,.hazLabels,.brIns,.brOuts,.brLabels {
-    height: auto;
-    display: inline-grid;
+.hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels {
+    height: initial;
+    display: table-cell;
+    vertical-align: middle;
     background-color: rgba(255,255,255,.9);
 }
 
