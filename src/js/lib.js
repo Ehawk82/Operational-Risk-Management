@@ -152,14 +152,16 @@ var homeUI = {
         tdd.name = input1.value;
         tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 	},
 	saveHazInput: function(tds,i,hazIn,tdd,z,hazOut) {
 		tdd.hVal0 = hazIn.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -169,7 +171,7 @@ var homeUI = {
 		tdd.hVal1 = hazIn1.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -180,7 +182,8 @@ var homeUI = {
 		tdd.hVal2 = hazIn2.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -196,7 +199,8 @@ var homeUI = {
 		tdd.hVal3 = hazIn3.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -206,7 +210,8 @@ var homeUI = {
 		tdd.hVal4 = hazIn4.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -216,7 +221,8 @@ var homeUI = {
 		tdd.bVal0 = brIn.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -226,7 +232,8 @@ var homeUI = {
 		tdd.bVal1 = brIn1.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -237,7 +244,8 @@ var homeUI = {
 		tdd.bVal2 = brIn2.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -253,7 +261,8 @@ var homeUI = {
 		tdd.bVal3 = brIn3.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -263,7 +272,8 @@ var homeUI = {
 		tdd.bVal4 = brIn4.value;
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
-		tdd.blueVal = +tdd.hVal0 + +tdd.bVal1 + +tdd.hVal4 + +tdd.bVal3 + +tdd.bVal4;
+		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);

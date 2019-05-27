@@ -75,12 +75,12 @@ var hazLib = {
                 hazOut.value = hazIn.value;
 
                 hazLabel.className = "hazLabels";
-                hazLabel.innerHTML = "IMPORTANCE OF TASK";
+                hazLabel.innerHTML = "DANGER LEVEL";
 
                 input1.type = "text";
                 input1.className = "input1";
                 input1.value = tdd.name;
-                input1.placeholder = " WHAT'S YOUR GOAL";
+                input1.placeholder = " WHAT'S YOUR PLAN";
                 input1.onkeyup = function(){ return homeUI.saveInput1(tds,i,input1,tdd,z) };
                 
                 hazFolder.className = "hazFolders";

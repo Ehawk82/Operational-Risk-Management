@@ -149,13 +149,12 @@ form {
     display: inline-table;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
-
+	
 }
 .tds {
 	position: static;
 	background: rgb(150,150,150);
 	height:auto; 
-	min-height: 20px;
 	width: inherit;
 	top:0;
 	left: 0;
@@ -163,7 +162,7 @@ form {
 	cursor: pointer;
 	padding:0px;
 	box-shadow: 0 0 1px inset black;
-
+    margin:20px 0;
 }
 
 .tds_full {
@@ -267,12 +266,13 @@ form {
 	margin: 1px 0;
 }
 .hazIcon {
-	border: 2px solid white;
-	margin:6px 10px;
-	display: block;
-	border-radius: 4px;
-	min-height: 6px;
-	max-height: 6px;
+	margin:6px 0px 0px 0px;
+
+	display: -webkit-inline-box;
+	min-height: 8px;
+
+	width:50%;
+	max-height: 8px;
 }
 /*ID*/
 
