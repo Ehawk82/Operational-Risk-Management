@@ -1,5 +1,5 @@
 /*DOM*/
-
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
 html, body {
 	padding: 0;
 	margin: 0;
@@ -17,7 +17,6 @@ p {
 }
 input[type="text"]{
 	border: 0px solid;
-	outline-style: none;
 	text-indent: 5px;
 }
 
@@ -222,9 +221,20 @@ form {
     line-height: 42px;
     margin-top: 6px;
     margin-left: 1vw;
-
+    outline-color: red;
 }
-.hazardHolder, .brightsideHolder {
+.noteHolder {
+	width: -webkit-fill-available;
+    height: inherit;
+    margin: 20px 5px;
+
+    display: inherit;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.hazardHolder, .brightsideHolder, .noteHolder {
     width: -webkit-fill-available;
     height: inherit;
     margin: 20px 5px;
@@ -243,11 +253,36 @@ form {
 	cursor: default;
 }
 .hazIns,.brIns {
-	flex: 3;
-	
+	flex: 5;
 	width: 13%;
 	margin: auto 2vw;
 	min-width: 100px;
+}
+.ntIns {
+	flex: .1;
+	resize: none;
+	width: inherit;
+    outline-color: red;
+    overflow: hidden;
+    word-wrap:normal;
+}
+.ntIns_full {
+	flex: 1;
+	resize: none;
+	width: inherit;
+    outline-color: red;
+    overflow: hidden;
+    word-wrap:inherit;
+}
+.ntOuts {
+	flex: 3;
+	font-family: "Walter Turncoat", cursive;
+	font-size: 1.7rem;
+	letter-spacing: 2px;
+	box-shadow: 0 0 3px silver inset;
+	width: inherit;padding: 30px;
+	background-color: #010;
+	color: #E8E8E8;
 }
 .hazLabels,.brLabels {
 	width: 60%;
@@ -277,6 +312,9 @@ form {
 /*ID*/
 
 /*MULTI*/
+.ntIns, .ntOut {
+	margin: 0 2px;
+}
 .hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels {
     height: initial;
     display: table-cell;
@@ -292,13 +330,11 @@ form {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.tCell,.tCell_full, .pages, .pages_full{
+.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full{
 	transition: 100ms all ease-in-out;
 }
 {
 	box-shadow: 0 0 .1px inset black,0 0 .1px inset black;
-
-
 }
 
 /*misc*/

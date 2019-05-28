@@ -19,7 +19,7 @@ var tdData = {
     greenVal: 0,
     blueVal: 0,
     alphaVal: 1,
-    notes: {},
+    notes: "",
     executable: false
 };
 var homeUI = {
@@ -118,6 +118,10 @@ var homeUI = {
                 brFolder3 = createEle("div"),
                 brFolder4 = createEle("div"),
                 brightsideHolder = createEle("div"),
+                noteHolder = createEle("div"),
+                ntFolder = createEle("div"),
+                ntIn = createEle("textarea"),
+                ntOut = createEle("div"),
                 form = createEle("form");
 
             tds.innerHTML = "";
@@ -128,11 +132,14 @@ var homeUI = {
             brightsideHolder.className = "brightsideHolder";
             brightsideHolder.onload = brLib.init(tds,i,tdd,z,xOut,brIn,brOut,brLabel,brIn1,brOut1,brLabel1,brIn2,brOut2,brLabel2,brIn3,brOut3,brLabel3,brIn4,brOut4,brLabel4,brFolder,brFolder1,brFolder2,brFolder3,brFolder4,brightsideHolder);
             
+            noteHolder.className = "noteHolder";
+            noteHolder.onload = ntLib.init(tds,i,tdd,z,xOut,ntIn,ntOut,ntFolder,noteHolder);
+
             xOut.innerHTML = "💾";
             xOut.className = "xOut";
             xOut.onclick = homeUI.xOutFunc(tds, tdd);
             
-            form.append(input1, hazardHolder, brightsideHolder);
+            form.append(input1, hazardHolder, brightsideHolder, noteHolder);
 
 			tds.append(form, xOut);
 	},
