@@ -198,12 +198,13 @@ form {
 
 }
 .tds h6 {
+	margin-top: 3px;
 	margin-bottom: 0;
 	padding: 5px 10px 5px 0;
 	text-align: right;
 	word-wrap: normal;
 	overflow: hidden;
-    min-height: 30px;
+    min-height: 24px;
 }
 .tds_full span {
 	margin:2px 5px;
@@ -298,6 +299,7 @@ form {
 	resize: none;
 	width: inherit;
     overflow: hidden;
+    cursor:col-resize;
     word-wrap:normal;
 }
 .ntIns_full {
@@ -305,6 +307,7 @@ form {
 	resize: none;
 	width: inherit;
     outline-color: #010;
+    cursor:auto;
     overflow: hidden;
     word-wrap:inherit;
 }
@@ -376,7 +379,7 @@ form {
 }
 
 /*misc*/
-.hazIns,.brIns {
+body, .hazIns,.brIns {
   -webkit-appearance: none;
   width: 100%;
   height: 100%;
@@ -389,7 +392,7 @@ form {
   transition: opacity .2s;
 }
 
-.hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
+body, .hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 15px;
@@ -399,7 +402,7 @@ form {
   cursor: pointer;
 }
 
-.hazIns::-moz-range-thumb,.brIns::-moz-range-thumb {
+body, .hazIns::-moz-range-thumb,.brIns::-moz-range-thumb {
   width: 100%;
   height: 25px;
   cursor: pointer;
