@@ -1,6 +1,7 @@
 var hazLib = {
 	init: function(tds,i,tdd,z,xOut,input1,hazardHolder,hazIn,hazOut,hazLabel,hazIn1,hazOut1,hazLabel1,hazIn2,hazOut2,hazLabel2,hazIn3,hazOut3,hazLabel3,hazIn4,hazOut4,hazLabel4,hazFolder,hazFolder1,hazFolder2,hazFolder3,hazFolder4) {
-        	hazIn4.type = "range";
+        	
+                hazIn4.type = "range";
                 hazIn4.className = "hazIns";
                 hazIn4.max = 100;
                 hazIn4.value = tdd.hVal4;

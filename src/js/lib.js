@@ -5,6 +5,7 @@ var tdData = {
     elem: "",
     value: "",
     number: "",
+    date: "",
     hVal0: 0,
     hVal1: 0,
     hVal2: 0,
@@ -42,9 +43,9 @@ var homeUI = {
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
                 if (tdd.name === "") {
-                	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,"+tdd.alphaVal+");'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
+                	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",1);'>&nbsp;</span><h6 class='timerCase'>&nbsp;</h6>";
                 } else {
-            		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,"+tdd.alphaVal+");'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
+            		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",1);'>&nbsp;</span><h6 class='timerCase'>" + tdd.date + "</h6>";
                 }
         		tds.className = "tds";
         		tds.id = "tds" + i;
@@ -118,6 +119,10 @@ var homeUI = {
                 brFolder3 = createEle("div"),
                 brFolder4 = createEle("div"),
                 brightsideHolder = createEle("div"),
+                timerHolder = createEle("div"),
+                dateCase = createEle("div"),
+                dateOut = createEle("div"),
+                todayDate = new Date();
                 noteHolder = createEle("div"),
                 ntFolder = createEle("div"),
                 ntIn = createEle("textarea"),
@@ -132,27 +137,38 @@ var homeUI = {
             brightsideHolder.className = "brightsideHolder";
             brightsideHolder.onload = brLib.init(tds,i,tdd,z,xOut,brIn,brOut,brLabel,brIn1,brOut1,brLabel1,brIn2,brOut2,brLabel2,brIn3,brOut3,brLabel3,brIn4,brOut4,brLabel4,brFolder,brFolder1,brFolder2,brFolder3,brFolder4,brightsideHolder);
             
+            timerHolder.className = "timerHolder";
+            timerHolder.onload = trLib.init(tds,i,tdd,z,xOut,timerHolder,dateCase,dateOut,todayDate);
+            
             noteHolder.className = "noteHolder";
             noteHolder.onload = ntLib.init(tds,i,tdd,z,xOut,ntIn,ntOut,ntFolder,noteHolder);
 
             xOut.innerHTML = "💾";
             xOut.className = "xOut";
-            xOut.onclick = homeUI.xOutFunc(tds, tdd);
+            xOut.onclick = homeUI.xOutFunc(tds,i,input1,tdd,z,dateOut);
             
-            form.append(input1, hazardHolder, brightsideHolder, noteHolder);
+            form.append(input1, hazardHolder, brightsideHolder, timerHolder, noteHolder);
 
 			tds.append(form, xOut);
+setTimeout(function(){
+makeFull(xOut);
+},420);
+		
+
 	},
-	xOutFunc: function(tds, tdd){
+	xOutFunc: function(tds,i,input1,tdd,z,dateOut){
 		return function(){
+
             if (tdd.name === "") {
-            	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,"+tdd.alphaVal+");'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
+            	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span><h6 class='timerCase'>&nbsp;</h6>";
             } else {
-        		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,"+tdd.alphaVal+");'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span>";
+        		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span><h6 class='timerCase'>" + tdd.date + "</h6>";
             }
+
+
 			setTimeout(function() {
             	takeFull(tds);
-			}, 10);
+			}, 1);
 		}
 	},
 	saveInput1: function(tds,i,input1,tdd,z) {

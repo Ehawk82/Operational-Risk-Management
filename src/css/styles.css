@@ -138,7 +138,7 @@ form {
 .tableHolder {
 	display: flex;
 	height: 70vh;
-	padding: 10px 2px;
+	padding: 10px 0;
 	background-color: lightgrey;
 	overflow-y: auto;
 	border-top: 2px groove silver;
@@ -192,10 +192,18 @@ form {
 	display: block;
 	padding: 3px 8px;
 	min-height: 20px;
-	font-size:1rem;
+	font-size:.9rem;
 	max-height: 20px;
 	overflow-y: auto;
 
+}
+.tds h6 {
+	margin-bottom: 0;
+	padding: 5px 10px 5px 0;
+	text-align: right;
+	word-wrap: normal;
+	overflow: hidden;
+    min-height: 30px;
 }
 .tds_full span {
 	margin:2px 5px;
@@ -206,6 +214,17 @@ form {
 	overflow-y: auto;
 }
 .xOut {
+   color:red;
+   position: fixed;
+   right:0;
+   cursor: pointer;
+   top: -82px;
+   line-height: 50px;
+   display: -webkit-box;
+   width: 10vw;
+   text-indent: 3vw;
+}
+.xOut_full {
    color:red;
    position: fixed;
    right:0;
@@ -221,7 +240,7 @@ form {
     line-height: 42px;
     margin-top: 6px;
     margin-left: 1vw;
-    outline-color: red;
+    outline-color: #010;
 }
 .noteHolder {
 	width: -webkit-fill-available;
@@ -237,7 +256,7 @@ form {
 .hazardHolder, .brightsideHolder, .noteHolder {
     width: -webkit-fill-available;
     height: inherit;
-    margin: 20px 5px;
+    margin: 20px 0;
     display: inherit;
     flex:2;
     display: flex;
@@ -258,11 +277,26 @@ form {
 	margin: auto 2vw;
 	min-width: 100px;
 }
+.dateOuts {
+	width: 90%;
+	margin: 5px ;
+	text-align: right;
+}
+.dateCase {
+	display: contents;
+	text-align: right;
+}
+.dateEle {
+	display: -webkit-inline-box;
+}
+.timerHolder{
+	display: -webkit-box;
+	width: -webkit-fill-available;
+}
 .ntIns {
 	flex: .1;
 	resize: none;
 	width: inherit;
-    outline-color: red;
     overflow: hidden;
     word-wrap:normal;
 }
@@ -270,7 +304,7 @@ form {
 	flex: 1;
 	resize: none;
 	width: inherit;
-    outline-color: red;
+    outline-color: #010;
     overflow: hidden;
     word-wrap:inherit;
 }
@@ -309,6 +343,10 @@ form {
 	width:50%;
 	max-height: 8px;
 }
+.timerCase {
+	background-color: white;
+
+}
 /*ID*/
 
 /*MULTI*/
@@ -330,7 +368,7 @@ form {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full{
+.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
 	transition: 100ms all ease-in-out;
 }
 {
@@ -347,6 +385,7 @@ form {
   opacity: 1;
   -webkit-transition: .2s;
   padding: 0 10px;
+  cursor: pointer;
   transition: opacity .2s;
 }
 
