@@ -4,7 +4,7 @@ var ntLib = {
         ntIn.className = "ntIns";
         ntIn.max = 20;
         ntIn.value = tdd.notes;
-        ntIn.placeholder = "enter";
+        ntIn.placeholder = "";
         ntIn.onfocus = function(){ return ntLib.focuser(ntIn) };
         ntIn.onblur = function(){ return ntLib.blurer(ntIn) };
         ntIn.onkeyup = function(){ return ntLib.saventInput(tds,i,ntIn,tdd,z,ntOut) };
@@ -12,7 +12,7 @@ var ntLib = {
         ntOut.className = "ntOuts";
         ntOut.innerHTML = tdd.notes;
 
-        ntFolder.className = "brFolders";
+        ntFolder.className = "ntFolders";
         ntFolder.append(ntIn,ntOut);
 
         noteHolder.append(ntFolder);

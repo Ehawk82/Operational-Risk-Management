@@ -133,6 +133,7 @@ form {
 	display: flow-root;
 	bottom:0;
     opacity: 1;
+    cursor: default;
     
 }
 .tableHolder {
@@ -246,18 +247,17 @@ form {
 .noteHolder {
 	width: -webkit-fill-available;
     height: inherit;
-    margin: 20px 5px;
-
+    margin: 0;
     display: inherit;
-    flex:1;
+    flex:2;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 }
-.hazardHolder, .brightsideHolder, .noteHolder {
+.hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
     height: inherit;
-    margin: 20px 0;
+    margin: 15px 2px 0 2px;
     display: inherit;
     flex:2;
     display: flex;
@@ -293,9 +293,10 @@ form {
 .timerHolder{
 	display: -webkit-box;
 	width: -webkit-fill-available;
+	height: content;
 }
 .ntIns {
-	flex: .1;
+	flex: .15;
 	resize: none;
 	width: inherit;
     overflow: hidden;
@@ -306,7 +307,7 @@ form {
 	flex: 1;
 	resize: none;
 	width: inherit;
-    outline-color: #010;
+    outline-color: transparent;
     cursor:auto;
     overflow: hidden;
     word-wrap:inherit;
@@ -325,7 +326,7 @@ form {
 	width: 60%;
 	font-size:100%;
 	overflow:auto;
-	padding: 5px;
+	padding: 6px;
 	word-wrap: break-word;
 
 }
@@ -336,6 +337,14 @@ form {
 	flex:1;
 	height: fit-content;
 	margin: 1px 0;
+}
+.ntFolders {
+	width: 100%;
+	display: inline-flex;
+	flex:1;
+	height: fit-content;
+	margin: 1px 0;
+	padding: 0;
 }
 .hazIcon {
 	margin:6px 0px 0px 0px;
