@@ -5,10 +5,45 @@ var items = [ "Assess Risks", "Identify Hazards", "Make Risk Decisions", "Implem
 myUI = {
 	init: () => {
         var tdd = parseLS("tdData");
-		myUI.myLoad(tdd);
+
+		myUI.progressScreen(tdd);
+        myUI.myLoad(tdd);
 	},
+    progressScreen: function(tdd){
+        var screenBlocker = createEle("div"),
+           progress = createEle("div"),
+           bar = createEle("div");
+        function move() {  
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      takeFull(screenBlocker);
+      setTimeout(function(){
+        screenBlocker.remove();
+      },600);
+    } else {
+      width++; 
+      bar.style.width = width + '%'; 
+    }
+  }
+}
+       bar.className = "bar";
+       bar.onload = move();
+       
+
+       progress.className = "progress";
+       progress.append(bar);
+
+
+       screenBlocker.className = "screenBlocker_full";
+       screenBlocker.append(progress);
+
+       body.append(screenBlocker);
+    },
 	toggleFullScreen: () => {
-        return () => {
+        return function(){
 			if (!document.fullscreenElement) {
             	document.documentElement.requestFullscreen();
         	} else {
@@ -18,7 +53,7 @@ myUI = {
             }
         }
 	},
-	myLoad: (tdd) => {
+	myLoad: function(tdd) {
         var tCell = createEle("div"),
             b1 = createEle("button"),
             climateBtn = createEle("button"),
@@ -134,6 +169,6 @@ myUI = {
     }
 };
 
-window.onload = () => {
+window.onload = function() {
     myUI.init();
 };

@@ -75,6 +75,39 @@ form {
   background: grey; 
 }
 /*CLASS*/
+.screenBlocker {
+	background-color: white;
+	position: fixed;
+	height: 100vh;
+	width:100vw;
+	z-index: 5;
+	left: 0;
+	top:100vh;
+	opacity: 0;
+	cursor:default;
+}
+.screenBlocker_full {
+	background-color: white;
+	position: fixed;
+	height: 100vh;
+	width:100vw;
+	z-index: 5;
+	left: 0;
+	top:0;
+	opacity: 1;
+	cursor:default;
+}
+.progress {
+  width: 70%;
+  margin: 20vh auto;
+  background-color: #ddd;
+}
+
+.bar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
 .ORMtable {
 	display: contents;
 }
@@ -380,7 +413,7 @@ form {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
+.screenBlocker_full,.screenBlocker,.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
 	transition: 100ms all ease-in-out;
 }
 {

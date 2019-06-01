@@ -23,6 +23,7 @@ var tdData = {
     notes: "",
     executable: false
 };
+
 var homeUI = {
 	init: function(x,tdd){
 
@@ -38,7 +39,7 @@ var homeUI = {
         	trs.id = "trs" + i;
             var z = i;
 
-            for (let i = 0; i < 16; i++) {
+            for (let i = 0; i < 20; i++) {
             	var tds = createEle("td");
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
