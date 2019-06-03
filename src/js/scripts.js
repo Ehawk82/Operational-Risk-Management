@@ -11,36 +11,38 @@ myUI = {
 	},
     progressScreen: function(tdd){
         var screenBlocker = createEle("div"),
-           progress = createEle("div"),
-           bar = createEle("div");
+            progress = createEle("div"),
+            bar = createEle("div");
         function move() {  
-  var width = 1;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-      takeFull(screenBlocker);
-      setTimeout(function(){
-        screenBlocker.remove();
-      },600);
-    } else {
-      width++; 
-      bar.style.width = width + '%'; 
-    }
-  }
-}
-       bar.className = "bar";
-       bar.onload = move();
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    setTimeout(function(){
+                        takeFull(screenBlocker);
+                        setTimeout(function(){
+                            screenBlocker.remove();
+                        },1600);
+                    },500);
+                } else {
+                    width++; 
+                    bar.style.width = width + '%'; 
+                }
+            }
+        }
+        bar.className = "bar";
+        bar.onload = move();
        
 
-       progress.className = "progress";
-       progress.append(bar);
+        progress.className = "progress";
+        progress.append(bar);
 
 
-       screenBlocker.className = "screenBlocker_full";
-       screenBlocker.append(progress);
+        screenBlocker.className = "screenBlocker_full";
+        screenBlocker.append(progress);
 
-       body.append(screenBlocker);
+        body.append(screenBlocker);
     },
 	toggleFullScreen: () => {
         return function(){
@@ -72,10 +74,12 @@ myUI = {
         statsPage.innerHTML = "<h1>STAT LOG</h1>";
         statsPage.className = "pages";
         statsPage.id = "statsPage";
+        statsPage.onload = statUI.init(statsPage,tdd);
 
         climatePage.innerHTML = "<h1>CLIMATE RECON</h1>";
         climatePage.className = "pages";
         climatePage.id = "climatePage";
+
 
         goPage.innerHTML = "<h1>CONTINGENCY REPORT</h1>";
         goPage.className = "pages";

@@ -1,5 +1,7 @@
-/*DOM*/
+/*IMPORTS*/
 @import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+/*DOM*/
 html, body {
 	padding: 0;
 	margin: 0;
@@ -76,18 +78,18 @@ form {
 }
 /*CLASS*/
 .screenBlocker {
-	background-color: white;
+	background-color: #000;
 	position: fixed;
 	height: 100vh;
 	width:100vw;
 	z-index: 5;
 	left: 0;
-	top:100vh;
+	top:0;
 	opacity: 0;
 	cursor:default;
 }
 .screenBlocker_full {
-	background-color: white;
+	background-color: #000;
 	position: fixed;
 	height: 100vh;
 	width:100vw;
@@ -100,13 +102,15 @@ form {
 .progress {
   width: 70%;
   margin: 20vh auto;
-  background-color: #ddd;
+  background-color: #381301;
+  box-shadow: 0 0 1px black inset,0 0 2px black inset;
 }
 
 .bar {
   width: 1%;
-  height: 30px;
-  background-color: #4CAF50;
+  height: 3px;
+  background-color: #005914;
+  box-shadow: 0 0 1px white inset,0 0 2px white inset;
 }
 .ORMtable {
 	display: contents;
@@ -172,30 +176,27 @@ form {
 .tableHolder {
 	display: flex;
 	height: 70vh;
-	padding: 10px 0;
-	background-color: lightgrey;
+	padding:  0;
+	background-color: silver;
 	overflow-y: auto;
-	border-top: 2px groove silver;
-	border-bottom: 2px groove silver;
 }
 .trs {
     display: inline-table;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
-	
 }
 .tds {
 	position: static;
-	background: rgb(150,150,150);
-	height:auto; 
+	background: rgb(110,110,110);
+	height:auto;
 	width: inherit;
 	top:0;
 	left: 0;
-	display: inline-block;
+	display: inline-grid;
 	cursor: pointer;
 	padding:0px;
 	box-shadow: 0 0 1px inset black;
-    margin:20px 0;
+    margin:0 0 10px 0;
 }
 
 .tds_full {
@@ -222,7 +223,8 @@ form {
 
 .tds p {
 	background-color: #fff;
-	margin:2px 1px;
+	box-shadow: 0 0 2px inset black,0 0 2px inset black,0 0 2px inset black;
+	margin:0;
 	display: block;
 	padding: 3px 8px;
 	min-height: 20px;
@@ -232,12 +234,14 @@ form {
 
 }
 .tds h6 {
-	margin-top: 3px;
-	margin-bottom: 0;
+	margin: 0;
 	padding: 5px 10px 5px 0;
 	text-align: right;
 	word-wrap: normal;
+	background-color: #111;
+	color:#999;
 	overflow: hidden;
+	line-height: 2;
     min-height: 24px;
 }
 .tds_full span {
@@ -290,7 +294,7 @@ form {
 .hazardHolder, .brightsideHolder {
     width: -webkit-fill-available;
     height: inherit;
-    margin: 15px 2px 0 2px;
+    margin: 15px 10px;
     display: inherit;
     flex:2;
     display: flex;
@@ -380,17 +384,14 @@ form {
 	padding: 0;
 }
 .hazIcon {
-	margin:6px 0px 0px 0px;
-
-	display: -webkit-inline-box;
+	margin: 2px;
+	display: inline-grid;
 	min-height: 8px;
-
-	width:50%;
+	width:-webkit-fill-available;
 	max-height: 8px;
+	border-radius: 2px;
 }
 .timerCase {
-	background-color: white;
-
 }
 /*ID*/
 

@@ -5,7 +5,7 @@ var tdData = {
     elem: "",
     value: "",
     number: "",
-    date: "",
+    date: "THE DATE HERE",
     hVal0: 0,
     hVal1: 0,
     hVal2: 0,
@@ -23,7 +23,6 @@ var tdData = {
     notes: "",
     executable: false
 };
-
 var homeUI = {
 	init: function(x,tdd){
 
@@ -44,7 +43,7 @@ var homeUI = {
 				LSinit("trs" + z + "tds" + i, tdData);
 				let tdd = parseLS("trs" + z + "tds" + i);
                 if (tdd.name === "") {
-                	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",1);'>&nbsp;</span><h6 class='timerCase'>&nbsp;</h6>";
+                	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,0);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",0);'>&nbsp;</span><h6 class='timerCase' style='color:rgba(0,0,0,0);'>" + tdd.date + "</h6>";
                 } else {
             		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",1);'>&nbsp;</span><h6 class='timerCase'>" + tdd.date + "</h6>";
                 }
@@ -151,17 +150,15 @@ var homeUI = {
             form.append(input1, hazardHolder, brightsideHolder, timerHolder, noteHolder);
 
 			tds.append(form, xOut);
-setTimeout(function(){
-makeFull(xOut);
-},420);
-		
-
+			setTimeout(function(){
+				makeFull(xOut);
+			},420);
 	},
 	xOutFunc: function(tds,i,input1,tdd,z,dateOut){
 		return function(){
 
             if (tdd.name === "") {
-            	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span><h6 class='timerCase'>&nbsp;</h6>";
+            	tds.innerHTML = "<p>&nbsp;</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,0);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+",0);'>&nbsp;</span><h6 class='timerCase' style='color:rgba(0,0,0,0);'>"+ tdd.date +"</h6>";
             } else {
         		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span><h6 class='timerCase'>" + tdd.date + "</h6>";
             }
@@ -303,5 +300,22 @@ makeFull(xOut);
 		tdd = parseLS("trs" + z + "tds" + i);
 		brOut4.value = tdd.bVal4;
 	}
+};
+var statUI = {
+	init: function(statsPage, tdd){
+		for(let i = 0; i < 6; i++){
+        	var trs = createEle("tr");
+        	    
+        	trs.className = "trs";
+        	trs.id = "trs" + i;
+            var z = i;
 
-}
+            for (let i = 0; i < 20; i++) {
+tdd = parseLS("trs" + z + "tds" + i, tdd);
+console.log(tdd);
+            }
+        	
+        }
+        
+	}
+};
