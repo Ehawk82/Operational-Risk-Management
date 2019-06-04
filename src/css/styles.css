@@ -77,6 +77,11 @@ form {
   background: grey; 
 }
 /*CLASS*/
+.sItemHolder {
+box-shadow: 0 0 1px inset black,0 0 1px inset black;
+width:-webkit-fill-available;
+display: inherit;
+}
 .screenBlocker {
 	background-color: #000;
 	position: fixed;
@@ -84,9 +89,15 @@ form {
 	width:100vw;
 	z-index: 5;
 	left: 0;
-	top:0;
+	top:100vh;
 	opacity: 0;
 	cursor:default;
+}
+.ps {
+	background-color: darkgrey;
+	color:white;
+	padding:5px;
+	display: -webkit-box;
 }
 .screenBlocker_full {
 	background-color: #000;

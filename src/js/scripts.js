@@ -5,9 +5,9 @@ var items = [ "Assess Risks", "Identify Hazards", "Make Risk Decisions", "Implem
 myUI = {
 	init: () => {
         var tdd = parseLS("tdData");
-
-		myUI.progressScreen(tdd);
         myUI.myLoad(tdd);
+		myUI.progressScreen(tdd);
+        
 	},
     progressScreen: function(tdd){
         var screenBlocker = createEle("div"),
@@ -23,7 +23,7 @@ myUI = {
                         takeFull(screenBlocker);
                         setTimeout(function(){
                             screenBlocker.remove();
-                        },1600);
+                        },500);
                     },500);
                 } else {
                     width++; 

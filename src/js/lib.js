@@ -304,15 +304,18 @@ var homeUI = {
 var statUI = {
 	init: function(statsPage, tdd){
 		for(let i = 0; i < 6; i++){
-        	var trs = createEle("tr");
-        	    
-        	trs.className = "trs";
-        	trs.id = "trs" + i;
             var z = i;
 
             for (let i = 0; i < 20; i++) {
-tdd = parseLS("trs" + z + "tds" + i, tdd);
-console.log(tdd);
+            	tdd = parseLS("trs" + z + "tds" + i, tdd);
+            	var ps = createEle("div");
+
+                ps.className = "ps";
+                if (tdd.name != "") {
+                	ps.innerHTML = "<div class='sItemHolder'>Name: " + tdd.name + " | Notes: " + tdd.notes + " | Date: " + tdd.date + " | Risk Factor: " + tdd.redVal + "</div>";
+					statsPage.append(ps);
+				}
+				
             }
         	
         }
