@@ -78,9 +78,15 @@ form {
 }
 /*CLASS*/
 .sItemHolder {
-box-shadow: 0 0 1px inset black,0 0 1px inset black;
-width:-webkit-fill-available;
-display: inherit;
+	box-shadow: 0 0 1px inset black,0 0 1px inset black;
+	width:-webkit-fill-available;
+	display: inherit;
+}
+.ps {
+	background-color: darkgrey;
+	color:white;
+	padding:5px;
+	display: -webkit-box;
 }
 .screenBlocker {
 	background-color: #000;
@@ -92,12 +98,6 @@ display: inherit;
 	top:100vh;
 	opacity: 0;
 	cursor:default;
-}
-.ps {
-	background-color: darkgrey;
-	color:white;
-	padding:5px;
-	display: -webkit-box;
 }
 .screenBlocker_full {
 	background-color: #000;
