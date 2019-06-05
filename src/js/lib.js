@@ -1,11 +1,6 @@
 var tdData = {
     name: "",
-    info: "",
-    level: "",
-    elem: "",
-    value: "",
-    number: "",
-    date: "THE DATE HERE",
+    date: "6/04/2019 13:10:25",
     hVal0: 0,
     hVal1: 0,
     hVal2: 0,
@@ -162,10 +157,12 @@ var homeUI = {
             } else {
         		tds.innerHTML = "<p>"+tdd.name+"</p><span class='hazIcon' style='background:rgba("+tdd.redVal+","+tdd.greenVal+",0,1);'>&nbsp;</span><span class='hazIcon' style='background:rgba(0,0,"+tdd.blueVal+","+tdd.alphaVal+");'>&nbsp;</span><h6 class='timerCase'>" + tdd.date + "</h6>";
             }
-
+ 			var statsPage = bySel("#statsPage");
+            	statsPage.innerHTML = "<h1>STAT LOG</h1>";
 
 			setTimeout(function() {
             	takeFull(tds);
+            	statUI.init(statsPage, tdd);
 			}, 1);
 		}
 	},
@@ -174,7 +171,9 @@ var homeUI = {
         tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 	},
 	saveHazInput: function(tds,i,hazIn,tdd,z,hazOut) {
@@ -182,7 +181,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -193,6 +194,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -204,7 +208,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -221,7 +227,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -232,7 +240,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -243,7 +253,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -254,7 +266,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -266,7 +280,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -283,7 +299,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -294,7 +312,9 @@ var homeUI = {
 		tdd.redVal = +tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4;
 		tdd.greenVal = +tdd.bVal0 + +tdd.bVal1 + +tdd.bVal2 + +tdd.bVal3 + +tdd.bVal4;
 		tdd.blueVal = ((+tdd.bVal0 + +tdd.bVal1 + +tdd.bVal4 + +tdd.bVal3 + +tdd.bVal4) - (+tdd.hVal0 + +tdd.hVal1 + +tdd.hVal2 + +tdd.hVal3 + +tdd.hVal4));
-		
+		if(tdd.blueVal > 100){
+			tdd.executable = true;
+		}
 		saveLS("trs" + z + "tds" + i, tdd);
 
 		tdd = parseLS("trs" + z + "tds" + i);
@@ -311,8 +331,10 @@ var statUI = {
             	var ps = createEle("div");
 
                 ps.className = "ps";
+                ps.style.background = "rgba(" + tdd.redVal + "," + tdd.greenVal + ",0,1)";
+
                 if (tdd.name != "") {
-                	ps.innerHTML = "<div class='sItemHolder'>Name: " + tdd.name + " | Notes: " + tdd.notes + " | Date: " + tdd.date + " | Risk Factor: " + tdd.redVal + "</div>";
+                	ps.innerHTML = "<div class='sItemHolder'><span>Name: " + tdd.name + "</span> | <span>Notes: " + tdd.notes + "</span> | <span>Date: " + tdd.date + "</span> | <span>Risk Factor: " + tdd.redVal + "</span> | <span>Value Factor: " + tdd.greenVal + "</span> | <span>Positive Factor: " + tdd.blueVal + "</span> | <span>Execute: " + tdd.executable + "</span></div>";
 					statsPage.append(ps);
 				}
 				
