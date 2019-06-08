@@ -426,6 +426,19 @@ form {
 }
 .timerCase {
 }
+.climateForge { 
+	background-color: grey;
+	height: 70vh;
+
+}
+.climateForge .btns {
+    margin: 10vw 5vw;
+    width: 10vw;
+    height: 10vw;
+    font-size: 2em;
+    border:initial;
+    outline-style: none;
+}
 /*ID*/
 #statsPage {
 	overflow-y: auto;

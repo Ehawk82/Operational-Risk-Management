@@ -344,3 +344,28 @@ var statUI = {
         
 	}
 };
+var cmUI = {
+	init: function(climatePage,tdd){
+		var climateHolder = createEle("div"),
+		    climateForge = createEle("div"),
+		    bsBtn = createEle("button"),
+		    bbBtn = createEle("button"),
+		    hsBtn = createEle("button");
+
+		hsBtn.innerHTML = "❤";
+        hsBtn.className = "btns";
+        
+        bbBtn.innerHTML = "🌫";
+        bbBtn.className = "btns";
+
+        bsBtn.innerHTML = "🎧";
+        bsBtn.className = "btns";
+
+        climateForge.className = "climateForge";
+        climateForge.append(bsBtn, bbBtn, hsBtn);
+        climateHolder.className = "climateHolder";
+        climateHolder.append(climateForge);
+
+		climatePage.append(climateHolder);
+	}
+};

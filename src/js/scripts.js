@@ -79,7 +79,7 @@ myUI = {
         climatePage.innerHTML = "<h1>CLIMATE RECON</h1>";
         climatePage.className = "pages";
         climatePage.id = "climatePage";
-
+        climatePage.onload = cmUI.init(climatePage,tdd);
 
         goPage.innerHTML = "<h1>CONTINGENCY REPORT</h1>";
         goPage.className = "pages";
@@ -109,7 +109,7 @@ myUI = {
         b1.onclick = myUI.toggleFullScreen();
 
         tCell.className = "tCell";
-        tCell.append(b1, homeBtn, statsBtn, goBtn, climateBtn);
+        tCell.append(b1, homeBtn, statsBtn, climateBtn, goBtn);
 
 		body.append(tCell, homePage, statsPage, climatePage, goPage);
 
