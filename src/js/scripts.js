@@ -95,7 +95,7 @@ myUI = {
         goBtn.id = "goBtn";
         goBtn.disabled = false;
 
-        statsBtn.innerHTML = "〽";
+        statsBtn.innerHTML = "📋";
         statsBtn.onclick = myUI.statsScreen(statsBtn, homePage, statsPage, climatePage, goPage);
         statsBtn.id = "statsBtn";
         statsBtn.disabled = false;

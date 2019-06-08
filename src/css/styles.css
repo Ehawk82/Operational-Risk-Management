@@ -10,6 +10,7 @@ html, body {
 	font-family: "Helvetica";
 	font-weight: 600;
 	letter-spacing: 1px;
+	
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 	overflow: hidden;
 
 }
+
 p {
 
 }
@@ -51,8 +53,17 @@ td {
 }
 
 button {
-    outline-style: transparent;
     cursor: pointer;
+    background-color: transparent;
+	border:none;
+	text-shadow: 1px 2px 1px black;
+	outline-style: none;
+}
+button:active {
+    text-shadow: 0px 0px 0px black;
+}
+button:disabled {
+    text-shadow: 0px 0px 0px black;
 }
 form {
 	
@@ -104,7 +115,6 @@ form {
 	margin: 0 1vw;
 }
 .screenBlocker {
-	background-color: #000;
 	position: fixed;
 	height: 100vh;
 	width:100vw;
@@ -113,9 +123,10 @@ form {
 	top:100vh;
 	opacity: 0;
 	cursor:default;
+	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
+
 }
 .screenBlocker_full {
-	background-color: #000;
 	position: fixed;
 	height: 100vh;
 	width:100vw;
@@ -124,6 +135,7 @@ form {
 	top:0;
 	opacity: 1;
 	cursor:default;
+	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
 }
 .progress {
   width: 70%;
@@ -158,18 +170,10 @@ form {
 }
 
 .tCell_full button {
-    margin: 0 0 5px 0;
+    margin: 0 0 8px 0;
     width:8vw;
     height: 8vw;
-    border:initial;
-    outline-style: none;
-}
-
-.tCell_full button:disabled {
-    background-color: rgba(0,0,0,0.6);
-    opacity: .6;
-    border:none;
-    outline-style: none;
+    font-size: 2vw;
 }
 
 .pages {
@@ -202,8 +206,8 @@ form {
 .tableHolder {
 	display: flex;
 	height: 70vh;
-	padding:  0;
-	background-color: silver;
+	padding:  2px;
+	background-color: #eee;
 	overflow-y: auto;
 }
 .trs {
@@ -213,16 +217,14 @@ form {
 }
 .tds {
 	position: static;
-	background: rgb(110,110,110);
 	height:auto;
 	width: inherit;
 	top:0;
 	left: 0;
 	display: inline-grid;
 	cursor: pointer;
-	padding:0px;
-	box-shadow: 0 0 1px inset black;
-    margin:0 0 10px 0;
+	padding:3px;
+    margin:3px 0;
 }
 
 .tds_full {
@@ -249,18 +251,19 @@ form {
 
 .tds p {
 	background-color: #fff;
-	box-shadow: 0 0 2px inset black,0 0 2px inset black,0 0 2px inset black;
-	margin:0;
+	box-shadow: 0 0 1px  black,0 0 1px black,0 0 1px black;
+	margin:1px 0;
 	display: block;
 	padding: 3px 8px;
 	min-height: 20px;
-	font-size:.9rem;
+	font-size:.7em;
 	max-height: 20px;
+	line-height: 20px;
 	overflow-y: auto;
 
 }
 .tds h6 {
-	margin: 0;
+	margin:1px 0;
 	padding: 5px;
 	text-align: right;
 	word-wrap: normal;
@@ -278,7 +281,7 @@ form {
 	max-height: 20px;
 	overflow-y: auto;
 }
-.xOut {
+.xOut,.exitScan {
    color:red;
    position: fixed;
    right:0;
@@ -289,7 +292,7 @@ form {
    width: 10vw;
    text-indent: 3vw;
 }
-.xOut_full {
+.xOut_full, .exitScan {
    color:red;
    position: fixed;
    right:0;
@@ -417,27 +420,47 @@ form {
 	padding: 0;
 }
 .hazIcon {
-	margin: 2px;
+	margin: 4px 0;
 	display: inline-grid;
 	min-height: 8px;
 	width:-webkit-fill-available;
 	max-height: 8px;
-	border-radius: 2px;
 }
 .timerCase {
 }
-.climateForge { 
-	background-color: grey;
+.climateForge {
 	height: 70vh;
-
+    margin: 2px;
 }
 .climateForge .btns {
-    margin: 10vw 5vw;
+    margin: 1vw 1vw;
     width: 10vw;
     height: 10vw;
-    font-size: 2em;
-    border:initial;
-    outline-style: none;
+    font-size: 4vw;
+    text-shadow: 1px 2px 2px black;
+}
+.climateForge .btns:active {
+
+}
+.scanPage {
+	position: fixed;
+	top:0;
+	left:0;
+	height: 100vh;
+	width: 100vw;
+	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
+    color:#eee;
+    cursor:default;
+}
+.exitScan {
+
+	font-size: 2vw;
+}
+
+.scanPlay {
+	font-size: 10vw;
+	display: -webkit-box;
+	margin:20% auto;
 }
 /*ID*/
 #statsPage {
@@ -447,6 +470,12 @@ form {
 /*MULTI*/
 .ntIns, .ntOut {
 
+}
+.climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
+	background: rgba(45,56,64,1);
+}
+.tCell_full button:disabled{
+	background: rgba(45,56,64,.5);
 }
 .hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels {
     height: initial;
@@ -463,11 +492,8 @@ form {
 	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
-.screenBlocker_full,.screenBlocker,.tCell,.tCell_full, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
+.screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
 	transition: 100ms all ease-in-out;
-}
-{
-	box-shadow: 0 0 .1px inset black,0 0 .1px inset black;
 }
 
 /*misc*/
@@ -494,8 +520,11 @@ body, .hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-body, .hazIns::-moz-range-thumb,.brIns::-moz-range-thumb {
+.hazIns::-moz-range-thumb,.brIns::-moz-range-thumb {
   width: 100%;
   height: 25px;
   cursor: pointer;
+}
+html,body,.pages, .pages_full{
+	background-color: #999;
 }

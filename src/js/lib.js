@@ -353,13 +353,17 @@ var cmUI = {
 		    hsBtn = createEle("button");
 
 		hsBtn.innerHTML = "❤";
+		hsBtn.style.color = "maroon";
         hsBtn.className = "btns";
+
         
-        bbBtn.innerHTML = "🌫";
+        bbBtn.innerHTML = "😤";
         bbBtn.className = "btns";
+
 
         bsBtn.innerHTML = "🎧";
         bsBtn.className = "btns";
+        bsBtn.onclick = cmUI.bodyScanner();
 
         climateForge.className = "climateForge";
         climateForge.append(bsBtn, bbBtn, hsBtn);
@@ -367,5 +371,36 @@ var cmUI = {
         climateHolder.append(climateForge);
 
 		climatePage.append(climateHolder);
+	},
+	bodyScanner: function(){
+		return function() {
+			var scanPage = createEle("div"),
+				scanPlay = createEle("button"),
+			    exitScan = createEle("button");
+   			
+   			exitScan.innerHTML = "❌";
+   			exitScan.className = "exitScan";
+   			exitScan.onclick = cmUI.exitScanFunc(scanPage);
+
+   			scanPlay.innerHTML = "▶";
+   			scanPlay.className = "scanPlay";
+   			scanPlay.onclick = cmUI.scanPlayFunc(scanPage, scanPlay);
+
+   			scanPage.innerHTML = "<h1>SCAN PAGE</h1>";
+   			scanPage.className = "scanPage";
+   			scanPage.append(exitScan, scanPlay);
+
+			body.append(scanPage);
+		}
+	},
+	scanPlayFunc: function(scanPage, scanPlay){
+		return function(){
+			scanPlay.disabled = true;
+		}
+	},
+	exitScanFunc: function(scanPage){
+		return function(){
+			scanPage.remove();
+		}
 	}
 };
