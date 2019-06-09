@@ -281,7 +281,7 @@ form {
 	max-height: 20px;
 	overflow-y: auto;
 }
-.xOut,.exitScan {
+.xOut,.exitScan, .exitBR, .exitHR {
    color:red;
    position: fixed;
    right:0;
@@ -292,7 +292,7 @@ form {
    width: 10vw;
    text-indent: 3vw;
 }
-.xOut_full, .exitScan {
+.xOut_full, .exitScan, .exitBR, .exitHR {
    color:red;
    position: fixed;
    right:0;
@@ -437,12 +437,11 @@ form {
     width: 10vw;
     height: 10vw;
     font-size: 4vw;
-    text-shadow: 1px 2px 2px black;
 }
 .climateForge .btns:active {
 
 }
-.scanPage {
+.scanPage, .breathPage, .heartPage {
 	position: fixed;
 	top:0;
 	left:0;
@@ -452,8 +451,7 @@ form {
     color:#eee;
     cursor:default;
 }
-.exitScan {
-
+.exitScan, .exitBR, .exitHR {
 	font-size: 2vw;
 }
 
@@ -471,7 +469,7 @@ form {
 .ntIns, .ntOut {
 
 }
-.climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
+.heartPage,.breathPage, .climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
 	background: rgba(45,56,64,1);
 }
 .tCell_full button:disabled{

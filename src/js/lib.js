@@ -355,11 +355,12 @@ var cmUI = {
 		hsBtn.innerHTML = "❤";
 		hsBtn.style.color = "maroon";
         hsBtn.className = "btns";
+        hsBtn.onclick = cmUI.heartTech();
 
         
         bbBtn.innerHTML = "😤";
         bbBtn.className = "btns";
-
+        bbBtn.onclick = cmUI.breathingTech();
 
         bsBtn.innerHTML = "🎧";
         bsBtn.className = "btns";
@@ -371,6 +372,81 @@ var cmUI = {
         climateHolder.append(climateForge);
 
 		climatePage.append(climateHolder);
+	},
+	heartTech: function(){
+		return function(){
+			var heartPage = createEle("div"),
+				exitHR = createEle("button");
+            
+			exitHR.innerHTML = "❌";
+   			exitHR.className = "exitHR";
+   			exitHR.onclick = cmUI.exitHeartFunc(heartPage);
+
+			heartPage.innerHTML = "<h1>HEART RATE</h1>";
+   			heartPage.className = "heartPage";
+   			heartPage.append(exitHR);
+
+			body.append(heartPage);
+
+			cmUI.scanHeart(heartPage);
+		}
+	},
+	scanHeart: function(heartPage){
+window.AudioContext = window.AudioContext ||
+                      window.webkitAudioContext;
+
+const context = new AudioContext();
+
+navigator.mediaDevices.getUserMedia({audio: true}).
+  then((stream) => {
+    const microphone = context.createMediaStreamSource(stream);
+    const filter = context.createBiquadFilter();
+
+    // microphone -> filter -> destination
+    microphone.connect(filter);
+    //filter.connect(context.destination);
+
+var frame = createEle("iframe");
+
+frame.sandbox = "allow-scripts";
+frame.srcdoc = filter.context.listener.value;
+updateFrame();
+
+function updateFrame(){
+	setTimeout(function(){
+
+		console.log(filter.context.listener.forwardZ);
+		updateFrame();
+	},1000);
+}
+heartPage.append(frame);
+});
+	},
+	exitHeartFunc: function(heartPage){
+		return function(){
+			heartPage.remove();
+		}
+	},
+	breathingTech: function(){
+		return function(){
+			var breathPage = createEle("div"),
+				exitBR = createEle("button");
+            
+			exitBR.innerHTML = "❌";
+   			exitBR.className = "exitBR";
+   			exitBR.onclick = cmUI.exitBreathFunc(breathPage);
+
+			breathPage.innerHTML = "<h1>BREATHING</h1>";
+   			breathPage.className = "breathPage";
+   			breathPage.append(exitBR);
+
+			body.append(breathPage);
+		}
+	},
+	exitBreathFunc: function(breathPage){
+		return function(){
+			breathPage.remove();
+		}
 	},
 	bodyScanner: function(){
 		return function() {
@@ -386,7 +462,7 @@ var cmUI = {
    			scanPlay.className = "scanPlay";
    			scanPlay.onclick = cmUI.scanPlayFunc(scanPage, scanPlay);
 
-   			scanPage.innerHTML = "<h1>SCAN PAGE</h1>";
+   			scanPage.innerHTML = "<h1>BODY SCAN</h1>";
    			scanPage.className = "scanPage";
    			scanPage.append(exitScan, scanPlay);
 
