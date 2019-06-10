@@ -392,35 +392,37 @@ var cmUI = {
 		}
 	},
 	scanHeart: function(heartPage){
-window.AudioContext = window.AudioContext ||
-                      window.webkitAudioContext;
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-const context = new AudioContext();
+	    const context = new AudioContext();
 
-navigator.mediaDevices.getUserMedia({audio: true}).
-  then((stream) => {
-    const microphone = context.createMediaStreamSource(stream);
-    const filter = context.createBiquadFilter();
+		navigator.mediaDevices.getUserMedia({audio: true}).
+  	    then((stream) => {
+		    const microphone = context.createMediaStreamSource(stream);
+		    const filter = context.createBiquadFilter();
 
-    // microphone -> filter -> destination
-    microphone.connect(filter);
-    //filter.connect(context.destination);
+		    microphone.connect(filter);
 
-var frame = createEle("iframe");
+			var frame = createEle("iframe");
+            var data = stream.getAudioTracks();
 
-frame.sandbox = "allow-scripts";
-frame.srcdoc = filter.context.listener.value;
-updateFrame();
+			var d = data[0].getSettings();
+	
+			frame.sandbox = "allow-scripts";
+			frame.className = "frame";
+			frame.srcdoc = d.volume;
 
-function updateFrame(){
-	setTimeout(function(){
 
-		console.log(filter.context.listener.forwardZ);
-		updateFrame();
-	},1000);
-}
-heartPage.append(frame);
-});
+			updateFrame();
+
+	    	function updateFrame(){
+				setTimeout(function(){
+					frame.srcdoc = d.volume;
+					updateFrame();
+				},1000);
+			}
+			heartPage.append(frame);
+		});
 	},
 	exitHeartFunc: function(heartPage){
 		return function(){

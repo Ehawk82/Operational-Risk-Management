@@ -460,11 +460,18 @@ form {
 	display: -webkit-box;
 	margin:20% auto;
 }
+.frame {
+	font-size: 3vw;
+	background: white;
+	width: -webkit-fill-available;
+	margin:10% 2%;
+}
 /*ID*/
 #statsPage {
 	overflow-y: auto;
 	height: 70vh;
 }
+
 /*MULTI*/
 .ntIns, .ntOut {
 
