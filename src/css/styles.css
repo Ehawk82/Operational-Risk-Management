@@ -39,6 +39,9 @@ h1 {
 	text-indent: 12px;
     cursor: default;
 	font-size:100%;
+	margin: 0 0 0 2px;
+    padding: 10px;
+    color:silver;
 }
 
 table {
@@ -123,7 +126,6 @@ form {
 	top:100vh;
 	opacity: 0;
 	cursor:default;
-	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
 
 }
 .screenBlocker_full {
@@ -135,7 +137,6 @@ form {
 	top:0;
 	opacity: 1;
 	cursor:default;
-	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
 }
 .progress {
   width: 70%;
@@ -147,7 +148,7 @@ form {
 .bar {
   width: 1%;
   height: 3px;
-  background-color: #005914;
+  background-color: #007914;
   box-shadow: 0 0 1px white inset,0 0 2px white inset;
 }
 .ORMtable {
@@ -170,7 +171,7 @@ form {
 }
 
 .tCell_full button {
-    margin: 0 0 8px 0;
+    margin: 0 0 2px 0;
     width:8vw;
     height: 8vw;
     font-size: 2vw;
@@ -206,8 +207,9 @@ form {
 .tableHolder {
 	display: flex;
 	height: 70vh;
-	padding:  2px;
-	background-color: #eee;
+	padding:  0;
+	margin-top: 2px;
+	background-color: transparent;
 	overflow-y: auto;
 }
 .trs {
@@ -223,8 +225,8 @@ form {
 	left: 0;
 	display: inline-grid;
 	cursor: pointer;
-	padding:3px;
-    margin:3px 0;
+	padding:0 2px;
+    margin:2px 0 3px 0;
 }
 
 .tds_full {
@@ -447,10 +449,10 @@ form {
 	left:0;
 	height: 100vh;
 	width: 100vw;
-	box-shadow: 0 0 10px inset black,0 0 20px inset black,0 0 40px inset black;
     color:#eee;
     cursor:default;
 }
+
 .exitScan, .exitBR, .exitHR {
 	font-size: 2vw;
 }
@@ -476,7 +478,7 @@ form {
 .ntIns, .ntOut {
 
 }
-.heartPage,.breathPage, .climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
+h1, .heartPage,.breathPage, .climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
 	background: rgba(45,56,64,1);
 }
 .tCell_full button:disabled{
@@ -494,7 +496,6 @@ form {
 	text-align: left;
 }
 .tableHolder ,table {
-	box-shadow: 0 0 1px green inset,0 0 2px black inset;
 }
 
 .screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
