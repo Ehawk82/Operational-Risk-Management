@@ -1,3 +1,4 @@
+var emoList = ["😱","😧","😦","🙁","😐","🤨","🙂","🙂","😊","😁"];
 var tdData = {
     name: "",
     date: "6/04/2019 13:10:25",
@@ -357,7 +358,6 @@ var cmUI = {
         hsBtn.className = "btns";
         hsBtn.onclick = cmUI.heartTech();
 
-        
         bbBtn.innerHTML = "😤";
         bbBtn.className = "btns";
         bbBtn.onclick = cmUI.breathingTech();
@@ -392,6 +392,8 @@ var cmUI = {
 		}
 	},
 	scanHeart: function(heartPage){
+alert("to-do: getUserMedia API not available");
+		/*
 		window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 	    const context = new AudioContext();
@@ -422,7 +424,35 @@ var cmUI = {
 				},1000);
 			}
 			heartPage.append(frame);
+
 		});
+		*/
+/*
+		navigator.mediaDevices.getUserMedia({ audio: true })
+  		.then(stream => {
+    		const mediaRecorder = new MediaRecorder(stream);
+    		mediaRecorder.start();
+
+    		const audioChunks = [];
+   			mediaRecorder.addEventListener("dataavailable", event => {
+      			audioChunks.push(event.data);
+    		});
+
+    		mediaRecorder.addEventListener("stop", () => {
+      			const audioBlob = new Blob(audioChunks);
+
+      			const audioUrl = URL.createObjectURL(audioBlob);
+      			const audio = new Audio(audioUrl);
+      			
+      			//audio.play();
+    		});
+    		
+    		setTimeout(() => {
+      			mediaRecorder.stop();
+    		}, 6000);
+  		});
+
+*/
 	},
 	exitHeartFunc: function(heartPage){
 		return function(){
@@ -432,15 +462,32 @@ var cmUI = {
 	breathingTech: function(){
 		return function(){
 			var breathPage = createEle("div"),
+			    moodLabel = createEle("div"),
+			    moodHolder = createEle("div"),
 				exitBR = createEle("button");
             
 			exitBR.innerHTML = "❌";
    			exitBR.className = "exitBR";
    			exitBR.onclick = cmUI.exitBreathFunc(breathPage);
+            
+   			moodLabel.innerHTML = "WHAT IS YOUR EMOTIONAL STATE?";
+   			moodLabel.className = "moodLabel";
+
+   			moodHolder.className = "moodHolder";
+            for (var i = 0; i < 10; i++) {
+            	var emo = createEle("button");
+
+            	emo.innerHTML = emoList[i];
+            	emo.className = "emoBtns";
+
+            	moodHolder.append(emo);
+            }
+   			
 
 			breathPage.innerHTML = "<h1>BREATHING</h1>";
    			breathPage.className = "breathPage";
-   			breathPage.append(exitBR);
+   			breathPage.append(exitBR, moodHolder);
+   			breathPage.append(exitBR,moodLabel,moodHolder);
 
 			body.append(breathPage);
 		}
