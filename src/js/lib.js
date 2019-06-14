@@ -478,6 +478,7 @@ alert("to-do: getUserMedia API not available");
             	var emo = createEle("button");
 
             	emo.innerHTML = emoList[i];
+            	emo.onclick = cmUI.emoFunc(i, breathPage);
             	emo.className = "emoBtns";
 
             	moodHolder.append(emo);
@@ -490,6 +491,18 @@ alert("to-do: getUserMedia API not available");
    			breathPage.append(exitBR,moodLabel,moodHolder);
 
 			body.append(breathPage);
+		}
+	},
+	emoFunc: function(i,breathPage){
+		return function(){
+			var brDiv = createEle("div"), brWidget = createEle("div");
+            
+            brWidget.innerHTML = "BREATHING WIDGET FOR LEVEL " + (i + 1);
+
+			brDiv.className = "brDiv";
+			brDiv.append(brWidget);
+            
+            breathPage.append(brDiv);
 		}
 	},
 	exitBreathFunc: function(breathPage){
