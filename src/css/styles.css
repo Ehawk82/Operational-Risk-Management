@@ -59,7 +59,7 @@ button {
     cursor: pointer;
     background-color: transparent;
 	border:none;
-	text-shadow: 1px 2px 1px black;
+	text-shadow: 1px 3px 2px black;
 	outline-style: none;
 }
 button:active {
@@ -105,24 +105,27 @@ form {
 	box-shadow: 0 0 1px inset black,0 0 1px inset black;
 	width:-webkit-fill-available;
 	display: inherit;
-	background-color: slategrey;
-	padding:15px;
-	margin: 0 5px;
+	background-color: white;
+	padding: 5px 15px;
+	margin: 0;
 }
 .sItemHolder span {
 	display: inline-flex;
 	width: content;
-	padding: 0 5px;
+	background-color: slategrey;
+	padding: 10px;
+	margin: 5px;
 	text-shadow: 1px 1px 1px black;
+	box-shadow: 0 0 10px inset black;
 }
 .ps {
-	color:white;
-	padding:5px;
+	color: white;
+	padding: 2px;
 	width: -webkit-fill-available;
 	display: inline-block;
 	height: auto;
 	overflow-y: auto;
-	margin: 0 1vw;
+	margin: 2px 1vw;
 }
 .screenBlocker {
 	position: fixed;

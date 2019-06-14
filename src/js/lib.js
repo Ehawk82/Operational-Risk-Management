@@ -335,7 +335,7 @@ var statUI = {
                 ps.style.background = "rgba(" + tdd.redVal + "," + tdd.greenVal + ",0,1)";
 
                 if (tdd.name != "") {
-                	ps.innerHTML = "<div class='sItemHolder'><span>Name: " + tdd.name + "</span> | <span>Notes: " + tdd.notes + "</span> | <span>Date: " + tdd.date + "</span> | <span>Risk Factor: " + tdd.redVal + "</span> | <span>Value Factor: " + tdd.greenVal + "</span> | <span>Positive Factor: " + tdd.blueVal + "</span> | <span>Execute: " + tdd.executable + "</span></div>";
+                	ps.innerHTML = "<div class='sItemHolder'><span>Name: " + tdd.name + "</span><span>Notes: " + tdd.notes + "</span><span>Date: " + tdd.date + "</span><span>Risk Factor: " + tdd.redVal + "</span><span>Value Factor: " + tdd.greenVal + "</span><span>Positive Factor: " + tdd.blueVal + "</span><span>Execute: " + tdd.executable + "</span></div>";
 					statsPage.append(ps);
 				}
 				
@@ -497,7 +497,7 @@ alert("to-do: getUserMedia API not available");
 		return function(){
 			var brDiv = createEle("div"), brWidget = createEle("div");
             
-            brWidget.innerHTML = "BREATHING WIDGET FOR LEVEL " + (i + 1);
+            brWidget.innerHTML = "BREATHING WIDGET FOR LEVEL " + (i +1);
 
 			brDiv.className = "brDiv";
 			brDiv.append(brWidget);
@@ -516,28 +516,49 @@ alert("to-do: getUserMedia API not available");
 				scanPlay = createEle("button"),
 			    exitScan = createEle("button");
    			
+   			var b1 = new Audio("src/assets/b1.mp3");
+
    			exitScan.innerHTML = "❌";
    			exitScan.className = "exitScan";
-   			exitScan.onclick = cmUI.exitScanFunc(scanPage);
+   			exitScan.onclick = cmUI.exitScanFunc(scanPage, b1);
 
    			scanPlay.innerHTML = "▶";
    			scanPlay.className = "scanPlay";
-   			scanPlay.onclick = cmUI.scanPlayFunc(scanPage, scanPlay);
+   			scanPlay.onclick = cmUI.scanPlayFunc(scanPage, scanPlay, b1);
 
-   			scanPage.innerHTML = "<h1>BODY SCAN</h1>";
+   			scanPage.innerHTML = "<h1>Wisdom Meditation guided by Steven Hickman</h1>";
    			scanPage.className = "scanPage";
    			scanPage.append(exitScan, scanPlay);
 
 			body.append(scanPage);
 		}
 	},
-	scanPlayFunc: function(scanPage, scanPlay){
+	scanPlayFunc: function(scanPage, scanPlay, b1){
 		return function(){
 			scanPlay.disabled = true;
+
+			player(b1);
+			
+			function player(b1){
+				b1.volume = "0";
+				b1.loop = false;
+				b1.play();
+
+				b1.addEventListener("ended", cmUI.endMeditation(scanPage, scanPlay, b1), false);
+			}
+
 		}
 	},
-	exitScanFunc: function(scanPage){
+	endMeditation: function(scanPage, scanPlay, b1){
+		return function() {
+			scanPlay.disabled = false;
+		}
+		
+	},
+	exitScanFunc: function(scanPage, b1){
 		return function(){
+			b1.pause();
+b1.currentTime = 0;
 			scanPage.remove();
 		}
 	}
