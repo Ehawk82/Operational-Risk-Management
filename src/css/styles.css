@@ -136,7 +136,6 @@ form {
 	top:100vh;
 	opacity: 0;
 	cursor:default;
-
 }
 .screenBlocker_full {
 	position: fixed;
@@ -523,7 +522,22 @@ form {
 	overflow-y: auto;
 	height: 70vh;
 }
+.brWidgetHolder {
+	background-color: darkgrey;
+	width:2vw;
+	height: auto;
+    display: grid;
+    transform: rotate(90deg);
+    margin:auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.wBox {
+	box-shadow: 0 0 10px inset limegreen;
+	width: -webkit-fill-available;
+	flex:auto;
 
+}
 /*MULTI*/
 .ntIns, .ntOut {
 

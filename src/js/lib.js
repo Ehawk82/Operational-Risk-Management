@@ -1,4 +1,7 @@
-var emoList = ["😱","😧","😦","🙁","😐","🤨","🙂","🙂","😊","😁"];
+var emoList = ["😱","😧","😦","🙁","😐","🤨","🙂","😊","😁","🤩"];
+var emoNames = ["TERRIBLE","CONCERNED","UPSET","BAD","NEUTRAL","CURIOUS","GOOD","SILLY","VERY GOOD","ELATED"];
+var emoVar = [-4,-3,-2,-1,0,1,2,3,4,5];
+
 var tdData = {
     name: "",
     date: "6/04/2019 13:10:25",
@@ -392,7 +395,7 @@ var cmUI = {
 		}
 	},
 	scanHeart: function(heartPage){
-alert("to-do: getUserMedia API not available");
+		alert("to-do: getUserMedia API not available");
 		/*
 		window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
@@ -427,7 +430,7 @@ alert("to-do: getUserMedia API not available");
 
 		});
 		*/
-/*
+		/*
 		navigator.mediaDevices.getUserMedia({ audio: true })
   		.then(stream => {
     		const mediaRecorder = new MediaRecorder(stream);
@@ -452,7 +455,7 @@ alert("to-do: getUserMedia API not available");
     		}, 6000);
   		});
 
-*/
+		*/
 	},
 	exitHeartFunc: function(heartPage){
 		return function(){
@@ -495,12 +498,23 @@ alert("to-do: getUserMedia API not available");
 	},
 	emoFunc: function(i,breathPage){
 		return function(){
-			var brDiv = createEle("div"), brWidget = createEle("div");
+			var brDiv = createEle("div"), brHeader = createEle("div"), brWidgetHolder = createEle("div");
             
-            brWidget.innerHTML = "BREATHING WIDGET FOR LEVEL " + (i +1);
+            brHeader.innerHTML = "EMOTIONAL STATE: " + emoNames[i];
 
+            brWidgetHolder.className = "brWidgetHolder";
+            for(var b = 0; b < emoVar.length * 2; b++){
+            	var wBox = createEle("div");
+
+                wBox.innerHTML = "&nbsp;";
+                wBox.className = "wBox";
+                var toner = b;
+
+	            brWidgetHolder.append(wBox);
+            };
+console.log(toner);
 			brDiv.className = "brDiv";
-			brDiv.append(brWidget);
+			brDiv.append(brHeader,brWidgetHolder);
             
             breathPage.append(brDiv);
 		}
