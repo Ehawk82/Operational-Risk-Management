@@ -395,8 +395,6 @@ var cmUI = {
 		}
 	},
 	scanHeart: function(heartPage){
-		alert("to-do: getUserMedia API not available");
-		/*
 		window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 	    const context = new AudioContext();
@@ -411,25 +409,25 @@ var cmUI = {
 			var frame = createEle("iframe");
             var data = stream.getAudioTracks();
 
-			var d = data[0].getSettings();
 	
 			frame.sandbox = "allow-scripts";
 			frame.className = "frame";
-			frame.srcdoc = d.volume;
+			//frame.srcdoc = d.volume;
 
 
 			updateFrame();
 
 	    	function updateFrame(){
 				setTimeout(function(){
-					frame.srcdoc = d.volume;
+					frame.srcdoc = microphone.volume;
+					console.log(microphone);
 					updateFrame();
 				},1000);
 			}
 			heartPage.append(frame);
 
 		});
-		*/
+
 		/*
 		navigator.mediaDevices.getUserMedia({ audio: true })
   		.then(stream => {
@@ -512,7 +510,7 @@ var cmUI = {
 
 	            brWidgetHolder.append(wBox);
             };
-console.log(toner);
+			console.log(toner);
 			brDiv.className = "brDiv";
 			brDiv.append(brHeader,brWidgetHolder);
             
@@ -554,7 +552,7 @@ console.log(toner);
 			player(b1);
 			
 			function player(b1){
-				b1.volume = "0";
+				b1.volume = "0.5";
 				b1.loop = false;
 				b1.play();
 
