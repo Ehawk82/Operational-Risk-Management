@@ -1,21 +1,69 @@
 var myUI;
 var items = [ "Assess Risks", "Identify Hazards", "Make Risk Decisions", "Implement Controls", "Supervise", "Tools" ];
-
+var ftBool = false;
 
 myUI = {
 	init: () => {
-        var tdd = parseLS("tdData");
-        myUI.myLoad(tdd);
-		myUI.progressScreen(tdd);
+        var ftc = LSinit("ftBool", ftBool);
         
+        var fff = parseLS("ftBool");
+        myUI.doFTcheck(fff);
+
 	},
+    doFTcheck: function(fff){
+        if (fff != true) {
+            myUI.tutor(fff);
+        } else {
+            myUI.doRun();
+        }
+    },
+    tutor: function(fff){
+        var tutorPage = createEle("div"), m1 = createEle("div"), m2 = createEle("div"), acceptBtn = createEle("button");
+
+        acceptBtn.innerHTML = "🆗";
+        acceptBtn.className = "acceptBtn";
+        acceptBtn.onclick = myUI.doRunPhase(tutorPage);
+
+        m2.innerHTML = "This app was designed to help with decisions using a neat color coded modules, notekeeping, meditaction, breathing techniques, heart readings, and other key features to help with risk assessment";
+        m2.className = "m2";
+
+        m1.innerHTML = "<p>Color legend</p><p><span style='background:red;'>&nbsp;</span> - hazardous</p><p><span style='background:green;'>&nbsp;</span> - low risk</p><p><span style='background:yellow;'>&nbsp;</span> - medium risk.</p><p><span style='background:blue;'>&nbsp;</span> - more likely for success</p>";
+        m1.className = "m1";
+        
+        tutorPage.innerHTML = "<h1>WELCOME TO OPERATIONAL RISK MANAGEMENT</h1>";
+        tutorPage.className = "tutorPage";
+        tutorPage.append(m1, m2, acceptBtn);
+
+        body.append(tutorPage);
+        setTimeout(function(){
+            makeFull(tutorPage);
+        },500);
+    },
+    doRunPhase: function(tutorPage){
+        return function() {
+            saveLS("ftBool", true);
+            takeFull(tutorPage);
+            setTimeout(function(){
+                tutorPage.remove();
+                myUI.doRun();
+            },500);
+        }
+    },
+    doRun: function(){
+        var tdd = parseLS("tdData");
+        setTimeout(function(){
+            myUI.progressScreen(tdd);
+        },100);
+    },
     progressScreen: function(tdd){
         var screenBlocker = createEle("div"),
             progress = createEle("div"),
             bar = createEle("div");
+            
         function move() {  
+            myUI.myLoad(tdd);
             var width = 1;
-            var id = setInterval(frame, 10);
+            var id = setInterval(frame, 5);
             function frame() {
                 if (width >= 100) {
                     clearInterval(id);

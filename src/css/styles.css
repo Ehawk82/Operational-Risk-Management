@@ -39,7 +39,7 @@ h1 {
 	text-indent: 12px;
     cursor: default;
 	font-size:2vw;
-	margin: 0 0 0 2px;
+	margin: 0;
     padding: 10px;
     color:silver;
 }
@@ -101,6 +101,24 @@ form {
     margin-top: 5px;
 }
 /*CLASS*/
+.acceptBtn {
+	font-size: 3vw;
+	margin: 1vw auto;
+	display: -webkit-box;
+
+}
+.m1, .m2 {
+	margin:3vh auto;
+	width: 70vw;
+	padding: 3vh 2vw;
+	box-shadow: 0 0 1px inset black,0 0 1px inset black;
+	display: block;
+	background-color: white;
+}
+.m1 span {
+	width:15px;
+	display: -webkit-inline-box;
+}
 .sItemHolder {
 	box-shadow: 0 0 1px inset black,0 0 1px inset black;
 	width:-webkit-fill-available;
@@ -127,7 +145,7 @@ form {
 	overflow-y: auto;
 	margin: 2px 1vw;
 }
-.screenBlocker {
+.screenBlocker, .tutorPage {
 	position: fixed;
 	height: 100vh;
 	width:100vw;
@@ -137,7 +155,7 @@ form {
 	opacity: 0;
 	cursor:default;
 }
-.screenBlocker_full {
+.screenBlocker_full, .tutorPage_full {
 	position: fixed;
 	height: 100vh;
 	width:100vw;
@@ -213,6 +231,9 @@ form {
     opacity: 1;
     cursor: default;
     
+}
+.pages_full h1 {
+	margin-left: 2px;
 }
 .tableHolder {
 	display: flex;
@@ -562,7 +583,7 @@ form {
 .tableHolder ,table {
 }
 
-.brDiv, .screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
+.tutorPage, .tutorPage_full, .brDiv, .screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
 	transition: 100ms all ease-in-out;
 }
 

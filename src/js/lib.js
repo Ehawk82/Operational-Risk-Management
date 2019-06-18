@@ -477,7 +477,7 @@ var cmUI = {
    			moodHolder.className = "moodHolder";
             for (var i = 0; i < 10; i++) {
             	var emo = createEle("button");
-
+            	
             	emo.innerHTML = emoList[i];
             	emo.onclick = cmUI.emoFunc(i, breathPage);
             	emo.className = "emoBtns";
@@ -494,6 +494,17 @@ var cmUI = {
 			body.append(breathPage);
 		}
 	},
+	doBreather: function(toner){
+		var wBox = bySelAll(".wBox");
+		for (var i = 0; i < wBox.length; i++) {
+			animate(wBox, i);
+			function animate(wBox, i){
+				setTimeout(function(){
+					console.log(wBox[i]);
+				},3000);
+			};
+		};
+	},
 	emoFunc: function(i,breathPage){
 		return function(){
 			var brDiv = createEle("div"), brHeader = createEle("div"), brWidgetHolder = createEle("div");
@@ -503,18 +514,21 @@ var cmUI = {
             brWidgetHolder.className = "brWidgetHolder";
             for(var b = 0; b < emoVar.length * 2; b++){
             	var wBox = createEle("div");
-
                 wBox.innerHTML = "&nbsp;";
                 wBox.className = "wBox";
                 var toner = b;
 
 	            brWidgetHolder.append(wBox);
             };
-			console.log(toner);
+			
 			brDiv.className = "brDiv";
 			brDiv.append(brHeader,brWidgetHolder);
             
             breathPage.append(brDiv);
+            setTimeout(function(){
+        		cmUI.doBreather(toner);
+            },100);
+            
 		}
 	},
 	exitBreathFunc: function(breathPage){
