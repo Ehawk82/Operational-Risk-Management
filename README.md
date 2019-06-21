@@ -1,5 +1,5 @@
 # Operational-Risk-Management
-ORM - the pentagon model for contingency planning
+ORM - the pentagon model for contingency planning adapted for private use.
 
 
 ![](https://raw.githubusercontent.com/Ehawk82/Operational-Risk-Management/master/src/assets/matrix-image.bmp)
@@ -13,6 +13,6 @@ ORM - the pentagon model for contingency planning
     **Special Notes**
 
     -Risk asssesment widget to launch as in app process
-    -Smart table matrix with inputs that detect keywords
+    -Smart table matrix with light indicators
     -Questionaire to assess hazards
-    -Supervision layout will be a super-duper-mega-to-do list
+    -Contingency reporting

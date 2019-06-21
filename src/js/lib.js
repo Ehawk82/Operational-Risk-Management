@@ -508,6 +508,7 @@ var cmUI = {
 					if (n<i+1){
 						n = i;
 						wBox[n].style.background = "limegreen";
+						animate();
 					}
 					
 				},1000);
