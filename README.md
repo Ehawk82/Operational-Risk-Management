@@ -12,7 +12,7 @@ ORM - the pentagon model for contingency planning adapted for private use.
 
     **Special Notes**
 
-    -Risk asssesment widget to launch as in app process
-    -Smart table matrix with light indicators
-    -Questionaire to assess hazards
-    -Contingency reporting
+    <p>-Risk asssesment widget to launch as in app process</p>
+    <p>-Smart table matrix with light indicators</p>
+    <p>-Questionaire to assess hazards</p>
+    <p>-Contingency reporting</p>
