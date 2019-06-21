@@ -548,7 +548,7 @@ form {
 	width:2vw;
 	height: auto;
     display: grid;
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
     margin:auto;
     border-radius: 10px;
     overflow: hidden;

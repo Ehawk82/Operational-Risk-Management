@@ -485,7 +485,6 @@ var cmUI = {
             	moodHolder.append(emo);
             }
    			
-
 			breathPage.innerHTML = "<h1>BREATHING</h1>";
    			breathPage.className = "breathPage";
    			breathPage.append(exitBR, moodHolder);
@@ -497,11 +496,21 @@ var cmUI = {
 	doBreather: function(toner){
 		var wBox = bySelAll(".wBox");
 		for (var i = 0; i < wBox.length; i++) {
-			animate(wBox, i);
-			function animate(wBox, i){
+			var n = 0;
+
+
+            animate(wBox, i, n);
+
+					//console.log(i);
+			function animate(wBox, i, n){
 				setTimeout(function(){
-					console.log(wBox[i]);
-				},3000);
+					console.log(i);
+					if (n<i+1){
+						n = i;
+						wBox[n].style.background = "limegreen";
+					}
+					
+				},1000);
 			};
 		};
 	},
