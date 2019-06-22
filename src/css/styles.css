@@ -269,7 +269,7 @@ form {
 	left: 0;
 	cursor: default;
 	opacity: 1;
-	z-index: 1;
+	z-index: 7;
 	display: -webkit-box;
 	padding:0vh 0vw;
     margin:0;
@@ -538,6 +538,33 @@ form {
 	margin:0 1vw;
     display: -webkit-inline-box;
 }
+.adDiv {
+	position: fixed;
+	top:105vh;
+	left:0;
+	background-color: white;
+	box-shadow: 0 0 1px black inset;
+	height: 34vh;
+    line-height: 12;
+	width: -webkit-fill-available;
+	display:block;
+	margin: 1vh 0;
+	z-index: 6;
+
+}
+.adDiv_full {
+	position: fixed;
+    top: 76vh;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 1px black inset;
+    height: 34vh;
+    line-height: 12;
+    width: -webkit-fill-available;
+    display: block;
+    margin: 1vh 0;
+    z-index: 6;
+}
 /*ID*/
 #statsPage {
 	overflow-y: auto;
@@ -545,17 +572,24 @@ form {
 }
 .brWidgetHolder {
 	background-color: darkgrey;
-	width:2vw;
+	width:75vw;
 	height: auto;
     display: grid;
-    transform: rotate(-90deg);
-    margin:auto;
-    border-radius: 10px;
+    margin:35vh auto;
+    border-radius: 3px;
     overflow: hidden;
 }
 .wBox {
 	box-shadow: 0 0 10px inset limegreen;
-	width: -webkit-fill-available;
+	background: lightgreen;
+	width: 0;
+	flex:auto;
+
+}
+.wBox_full {
+	box-shadow: 0 0 10px inset limegreen;
+	background: lightgreen;
+	width: 100%;
 	flex:auto;
 
 }
@@ -582,9 +616,8 @@ form {
 }
 .tableHolder ,table {
 }
-
-.tutorPage, .tutorPage_full, .brDiv, .screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
-	transition: 100ms all ease-in-out;
+.adDiv,.adDiv_full,.tutorPage, .tutorPage_full, .brDiv, .screenBlocker_full,.screenBlocker, .pages, .pages_full,.ntIns,.ntIns_full,.tableHolder,.ORMtable, .xOut,.xOut_full{
+	transition: 500ms all ease-in-out;
 }
 
 /*misc*/

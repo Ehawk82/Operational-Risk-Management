@@ -1,6 +1,6 @@
 var emoList = ["😱","😧","😦","🙁","😐","🤨","🙂","😊","😁","🤩"];
 var emoNames = ["TERRIBLE","CONCERNED","UPSET","BAD","NEUTRAL","CURIOUS","GOOD","SILLY","VERY GOOD","ELATED"];
-var emoVar = [-4,-3,-2,-1,0,1,2,3,4,5];
+var emoVar = [6,5,4,3,2,1,2,3,4,5];
 
 var tdData = {
     name: "",
@@ -27,8 +27,9 @@ var homeUI = {
 
 		var h1 = createEle("h1"),
 		    tableHolder = createEle("div"),
-		    table = createEle("table");
-        
+		    table = createEle("table"),
+            adDiv = createEle("div");
+
         table.className = "ORMtable";
         for(let i = 0; i < 6; i++){
         	var trs = createEle("tr");
@@ -61,7 +62,16 @@ var homeUI = {
 
 		h1.innerHTML = "OPERATIONAL RISK MANAGEMENT";
 
+		adDiv.innerHTML = "[HOME PAGE ADS GO HERE]";
+        adDiv.className = "adDiv";
+
 		x.append(h1, tableHolder);
+
+        body.append(adDiv);
+
+		setTimeout(function(){
+			makeFull(adDiv);
+		}, 2400);
 	},
 	cellProtoToDo: function(tds, i, tdd, z) {
     	return function() {
@@ -341,11 +351,8 @@ var statUI = {
                 	ps.innerHTML = "<div class='sItemHolder'><span>Name: " + tdd.name + "</span><span>Notes: " + tdd.notes + "</span><span>Date: " + tdd.date + "</span><span>Risk Factor: " + tdd.redVal + "</span><span>Value Factor: " + tdd.greenVal + "</span><span>Positive Factor: " + tdd.blueVal + "</span><span>Execute: " + tdd.executable + "</span></div>";
 					statsPage.append(ps);
 				}
-				
             }
-        	
         }
-        
 	}
 };
 var cmUI = {
@@ -414,7 +421,6 @@ var cmUI = {
 			frame.className = "frame";
 			//frame.srcdoc = d.volume;
 
-
 			updateFrame();
 
 	    	function updateFrame(){
@@ -475,6 +481,7 @@ var cmUI = {
    			moodLabel.className = "moodLabel";
 
    			moodHolder.className = "moodHolder";
+
             for (var i = 0; i < 10; i++) {
             	var emo = createEle("button");
             	
@@ -493,51 +500,32 @@ var cmUI = {
 			body.append(breathPage);
 		}
 	},
-	doBreather: function(toner){
-		var wBox = bySelAll(".wBox");
-		for (var i = 0; i < wBox.length; i++) {
-			var n = 0;
-
-
-            animate(wBox, i, n);
-
-					//console.log(i);
-			function animate(wBox, i, n){
-				setTimeout(function(){
-					console.log(i);
-					if (n<i+1){
-						n = i;
-						wBox[n].style.background = "limegreen";
-						animate();
-					}
-					
-				},1000);
-			};
-		};
+	doBreather: function(wBox,i,breathIn,breathOut){
+/*
+  breathing state machine
+*/
 	},
 	emoFunc: function(i,breathPage){
 		return function(){
 			var brDiv = createEle("div"), brHeader = createEle("div"), brWidgetHolder = createEle("div");
-            
+            var wBox = createEle("div"), breathIn = emoVar[i], breathOut = emoVar[i];
+
+  			wBox.innerHTML = "&nbsp;";
+            wBox.className = "wBox";
+
             brHeader.innerHTML = "EMOTIONAL STATE: " + emoNames[i];
 
             brWidgetHolder.className = "brWidgetHolder";
-            for(var b = 0; b < emoVar.length * 2; b++){
-            	var wBox = createEle("div");
-                wBox.innerHTML = "&nbsp;";
-                wBox.className = "wBox";
-                var toner = b;
-
-	            brWidgetHolder.append(wBox);
-            };
+			brWidgetHolder.append(wBox);
 			
 			brDiv.className = "brDiv";
 			brDiv.append(brHeader,brWidgetHolder);
             
             breathPage.append(brDiv);
+
             setTimeout(function(){
-        		cmUI.doBreather(toner);
-            },100);
+        		cmUI.doBreather(wBox,i,breathIn,breathOut);
+            },10);
             
 		}
 	},
@@ -594,7 +582,7 @@ var cmUI = {
 	exitScanFunc: function(scanPage, b1){
 		return function(){
 			b1.pause();
-b1.currentTime = 0;
+			b1.currentTime = 0;
 			scanPage.remove();
 		}
 	}

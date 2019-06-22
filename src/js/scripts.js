@@ -115,6 +115,8 @@ myUI = {
             statsPage = createEle("div"),
             homePage = createEle("div");
         
+        
+
         homePage.className = "pages";
         homePage.id = "homePage";
         homePage.onload = homeUI.init(homePage,tdd);

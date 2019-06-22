@@ -4,7 +4,7 @@ ORM - the pentagon model for contingency planning adapted for private use.
 
 ![image](https://raw.githubusercontent.com/Ehawk82/Operational-Risk-Management/master/src/assets/matrix-image.bmp)
 
-<!--[go here](https://github.com/Ehawk82/Operational-Risk-Management.git/master/index.html)-->
+<!--[link](https://github.com/Ehawk82/Operational-Risk-Management.git/master/index.html)-->
 
 1.  Identify risk
 2.  Assess hazards
