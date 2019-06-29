@@ -62,7 +62,7 @@ var homeUI = {
 
 		h1.innerHTML = "OPERATIONAL RISK MANAGEMENT";
 
-		adDiv.innerHTML = "[HOME PAGE ADS GO HERE]";
+		adDiv.innerHTML = "[ADS MAY GO HERE]";
         adDiv.className = "adDiv";
 
 		x.append(h1, tableHolder);
@@ -501,6 +501,10 @@ var cmUI = {
 		}
 	},
 	doBreather: function(wBox,i,breathIn,breathOut){
+		console.log(wBox);
+		console.log(i);
+		console.log(breathIn);
+		console.log(breathOut);
 /*
   breathing state machine
 */

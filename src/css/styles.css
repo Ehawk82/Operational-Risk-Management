@@ -100,6 +100,7 @@ form {
     background-color: transparent;
     margin-top: 5px;
 }
+::selection { background: transparent; }
 /*CLASS*/
 .acceptBtn {
 	font-size: 3vw;
@@ -232,9 +233,7 @@ form {
     cursor: default;
     
 }
-.pages_full h1 {
-	margin-left: 2px;
-}
+
 .tableHolder {
 	display: flex;
 	height: 70vh;
@@ -544,13 +543,12 @@ form {
 	left:0;
 	background-color: white;
 	box-shadow: 0 0 1px black inset;
-	height: 34vh;
-    line-height: 12;
+	height: 23vh;
 	width: -webkit-fill-available;
 	display:block;
-	margin: 1vh 0;
+	margin: 0;
 	z-index: 6;
-
+	text-align: center;
 }
 .adDiv_full {
 	position: fixed;
@@ -558,17 +556,12 @@ form {
     left: 0;
     background-color: white;
     box-shadow: 0 0 1px black inset;
-    height: 34vh;
-    line-height: 12;
+    height: 23vh;
     width: -webkit-fill-available;
     display: block;
-    margin: 1vh 0;
+    margin: 0;
     z-index: 6;
-}
-/*ID*/
-#statsPage {
-	overflow-y: auto;
-	height: 70vh;
+	text-align: center;
 }
 .brWidgetHolder {
 	background-color: darkgrey;
@@ -593,7 +586,17 @@ form {
 	flex:auto;
 
 }
+/*ID*/
+#statsPage {
+	overflow-y: auto;
+	height: 70vh;
+}
+
 /*MULTI*/
+.pages_full h1,.pages h1 {
+	margin-left: 2px;
+}
+
 .ntIns, .ntOut {
 
 }
