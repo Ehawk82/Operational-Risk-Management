@@ -7,16 +7,15 @@ html, body {
 	margin: 0;
 	height:100vh;
 	width:100vw;
+	background-color: slategrey;
 	font-family: "Helvetica";
 	font-weight: 600;
 	letter-spacing: 1px;
-	
 }
 
 body {
     display: -webkit-box;
 	overflow: hidden;
-
 }
 
 p {
@@ -169,7 +168,7 @@ form {
 .progress {
   width: 70%;
   margin: 20vh auto;
-  background-color: #381301;
+  background-color: slategrey;
   box-shadow: 0 0 1px black inset,0 0 2px black inset;
 }
 
@@ -628,7 +627,6 @@ body, .hazIns,.brIns {
   -webkit-appearance: none;
   width: 100%;
   height: 100%;
-  background: #d3d3d3;
   outline: none;
   opacity: 1;
   -webkit-transition: .2s;
@@ -643,7 +641,7 @@ body, .hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
   width: 15px;
   height: 10px;
   border-radius: 1px;
-  background: rgba(255,255,255,.9);
+	background-color: #999;
   cursor: pointer;
 }
 

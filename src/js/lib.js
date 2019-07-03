@@ -173,10 +173,12 @@ var homeUI = {
             }
  			var statsPage = bySel("#statsPage");
             	statsPage.innerHTML = "<h1>STAT LOG</h1>";
-
+           	var goPage = bySel("#goPage");
+            	goPage.innerHTML = "<h1>CONTINGENCY REPORT</h1>";
 			setTimeout(function() {
             	takeFull(tds);
             	statUI.init(statsPage, tdd);
+            	conUI.init(goPage, tdd);
 			}, 1);
 		}
 	},
@@ -505,9 +507,9 @@ var cmUI = {
 		console.log(i);
 		console.log(breathIn);
 		console.log(breathOut);
-/*
-  breathing state machine
-*/
+		/*
+		  breathing state machine
+		*/
 	},
 	emoFunc: function(i,breathPage){
 		return function(){
@@ -589,5 +591,25 @@ var cmUI = {
 			b1.currentTime = 0;
 			scanPage.remove();
 		}
+	}
+};
+var conUI = {
+	init: function(goPage,tdd){
+		for(let i = 0; i < 6; i++){
+			var z = i;
+            for (let i = 0; i < 20; i++) {
+            	tdd = parseLS("trs" + z + "tds" + i, tdd);
+            	var conThumb = createEle("div");
+
+                conThumb.className = "conThumb";
+
+                if (tdd.name != "") {
+    
+    				conThumb.innerHTML = tdd.name;
+					goPage.append(conThumb);
+				}
+
+            }
+        }
 	}
 };

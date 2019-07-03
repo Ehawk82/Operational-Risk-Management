@@ -134,6 +134,7 @@ myUI = {
         goPage.innerHTML = "<h1>CONTINGENCY REPORT</h1>";
         goPage.className = "pages";
         goPage.id = "goPage";
+        goPage.onload = conUI.init(goPage,tdd);
 
         climateBtn.innerHTML = "⛅";
         climateBtn.onclick = myUI.climateScreen(climateBtn, homePage, statsPage, climatePage, goPage);
@@ -163,7 +164,7 @@ myUI = {
 
 		body.append(tCell, homePage, statsPage, climatePage, goPage);
 
-        setTimeout(function(){ makeFull( tCell);makeFull(homePage); }, 150);
+        setTimeout(function(){ makeFull( tCell);makeFull(homePage); }, 100);
 	},
     homeScreen: function(home, homePage, statsPage, climatePage, goPage){
         return function(){
