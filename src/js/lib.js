@@ -159,8 +159,10 @@ var homeUI = {
             form.append(input1, hazardHolder, brightsideHolder, timerHolder, noteHolder);
 
 			tds.append(form, xOut);
+
 			setTimeout(function(){
 				makeFull(xOut);
+				input1.focus();
 			},420);
 	},
 	xOutFunc: function(tds,i,input1,tdd,z,dateOut){
@@ -595,6 +597,8 @@ var cmUI = {
 };
 var conUI = {
 	init: function(goPage,tdd){
+		var conThumbContainer = createEle("div"),
+			displayContainer = createEle("div");
 		for(let i = 0; i < 6; i++){
 			var z = i;
             for (let i = 0; i < 20; i++) {
@@ -604,12 +608,38 @@ var conUI = {
                 conThumb.className = "conThumb";
 
                 if (tdd.name != "") {
-    
-    				conThumb.innerHTML = tdd.name;
-					goPage.append(conThumb);
-				}
+                	if(tdd.executable){
+                		conThumb.style.color = "limegreen";
+                		conThumb.innerHTML = "✔";
+                	} else {
+                		conThumb.innerHTML = "❌";
+                	}
+    				
+    				conThumb.style.borderWidth = "2px";
+    				conThumb.style.borderStyle = "solid";
+    				conThumb.style.borderColor = "rgba(" + tdd.redVal + "," + tdd.greenVal + ",0,1)";
+    				conThumb.className = "conThumb";
+    				conThumb.onmouseover = conUI.thumbOver(conThumb,tdd,displayContainer);
 
+					conThumbContainer.className = "conThumbContainer";
+					conThumbContainer.append(conThumb);
+
+					displayContainer.innerHTML = "&nbsp;";
+					displayContainer.className = "displayContainer";
+
+					goPage.append(conThumbContainer, displayContainer);
+				}
             }
         }
+	},
+	thumbOver: function(conThumb,tdd,displayContainer){
+		return function(){
+			var divStuffs = "<h2>Item Name: " + tdd.name + "</h2>";
+				divStuffs += "<div class='dvLog'>";
+				divStuffs += "&nbsp;";
+				divStuffs += "</div>";
+
+			displayContainer.innerHTML = divStuffs;
+		}
 	}
 };

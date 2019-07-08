@@ -282,7 +282,7 @@ form {
 
 .tds p {
 	background-color: #fff;
-	box-shadow: 0 0 1px  black,0 0 1px black,0 0 1px black;
+	
 	margin:1px 0;
 	display: block;
 	padding: 3px 8px;
@@ -539,11 +539,10 @@ form {
 .adDiv {
 	position: fixed;
 	top:105vh;
-	left:0;
+	left:8vw;
 	background-color: white;
-	box-shadow: 0 0 1px black inset;
-	height: 23vh;
-	width: -webkit-fill-available;
+	height: 15vh;
+	width: 91vw;
 	display:block;
 	margin: 0;
 	z-index: 6;
@@ -551,13 +550,13 @@ form {
 }
 .adDiv_full {
 	position: fixed;
-    top: 76vh;
-    left: 0;
+    top: 80vh;
+    left: 8.1vw;
     background-color: white;
-    box-shadow: 0 0 1px black inset;
-    height: 23vh;
-    width: -webkit-fill-available;
+	height: 15vh;
+    width: 91.75vw;
     display: block;
+    padding: 10px 0;
     margin: 0;
     z-index: 6;
 	text-align: center;
@@ -585,10 +584,50 @@ form {
 	flex:auto;
 
 }
+.conThumb {
+	background-color: #eee;
+	
+	display: inline-block;
+	width:30px;
+	height:30px;
+	line-height: 30px;
+	margin:5px;
+	text-align: center;
+	cursor: zoom-in;
+}
+.conThumbContainer {
+	background-color: slategrey;
+	height: 12vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 2px;
+}
+.displayContainer {
+	background-color: white;
+	height: 60vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 2px;
+}
+.displayContainer h2 {
+	background-color: grey;
+	width: -webkit-fill-available;
+	margin: 4px 5px;
+	display: -webkit-box;
+	text-indent: 8px;
+}
+.dvLog {
+	background-color: darkgrey;
+	height: 92%;
+	width: -webkit-fill-available;
+	margin: 0 5px;
+	display: -webkit-box;
+}
 /*ID*/
 #statsPage {
 	overflow-y: auto;
 	height: 70vh;
+
 }
 
 /*MULTI*/
@@ -612,7 +651,12 @@ h1, .heartPage,.breathPage, .climateForge, .tds, .screenBlocker_full,.screenBloc
 	box-shadow: 0 0 1px inset black,0 0 1px inset black,0 0 1px inset black;
     background-color: rgba(255,255,255,.5);
 }
-
+.conThumb,.hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels,.tds p {
+	box-shadow: 0 0 1px inset black,0 0 1px inset black,0 0 1px inset black;
+}
+.tds p,.displayContainer, .conThumbContainer,.adDiv,.adDiv_full{
+	box-shadow: 0 0 2px inset black,0 0 2px inset black,0 0 2px inset black;
+}
 form {
 	text-align: left;
 }

@@ -83,7 +83,7 @@ var hazLib = {
                 input1.value = tdd.name;
                 input1.placeholder = " WHAT'S YOUR PLAN";
                 input1.onkeyup = function(){ return homeUI.saveInput1(tds,i,input1,tdd,z) };
-                
+
                 hazFolder.className = "hazFolders";
                 hazFolder.append(hazLabel,hazIn,hazOut);
 
