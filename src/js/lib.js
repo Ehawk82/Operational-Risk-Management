@@ -609,12 +609,12 @@ var conUI = {
 
                 if (tdd.name != "") {
                 	if(tdd.executable){
-                		conThumb.style.color = "limegreen";
+                		
                 		conThumb.innerHTML = "✔";
                 	} else {
-                		conThumb.innerHTML = "❌";
+                		conThumb.innerHTML = "⚠";
                 	}
-    				
+    				conThumb.style.color = "rgb(" + tdd.redVal + "," + tdd.greenVal + "," + tdd.blueVal + ")";
     				conThumb.style.borderWidth = "2px";
     				conThumb.style.borderStyle = "solid";
     				conThumb.style.borderColor = "rgba(" + tdd.redVal + "," + tdd.greenVal + ",0,1)";
@@ -636,7 +636,17 @@ var conUI = {
 		return function(){
 			var divStuffs = "<h2>Item Name: " + tdd.name + "</h2>";
 				divStuffs += "<div class='dvLog'>";
-				divStuffs += "&nbsp;";
+				divStuffs += "<div class='stHd'>";
+				divStuffs += "<div class='stBr' style='background-color:red;height:" + tdd.redVal + "px;'><label>HAZARD</label></div>";
+				divStuffs += "<div class='stBr' style='background-color:green;height:" + tdd.greenVal + "px;'><label>SUPPORT</label></div>";
+				divStuffs += "<div class='stBr' style='background-color:blue;height:" + tdd.blueVal + "px;'><label>SUCCESS</label></div>";
+				divStuffs += "</div>";
+				if(!tdd.notes){
+					divStuffs += "<p class='pNotes'>&nbsp;</p>";
+
+				}else{
+					divStuffs += "<p class='pNotes'>Notes: " + tdd.notes + "</p>";
+				}
 				divStuffs += "</div>";
 
 			displayContainer.innerHTML = divStuffs;
