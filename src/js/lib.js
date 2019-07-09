@@ -609,7 +609,6 @@ var conUI = {
 
                 if (tdd.name != "") {
                 	if(tdd.executable){
-                		
                 		conThumb.innerHTML = "✔";
                 	} else {
                 		conThumb.innerHTML = "⚠";
@@ -619,7 +618,7 @@ var conUI = {
     				conThumb.style.borderStyle = "solid";
     				conThumb.style.borderColor = "rgba(" + tdd.redVal + "," + tdd.greenVal + ",0,1)";
     				conThumb.className = "conThumb";
-    				conThumb.onmouseover = conUI.thumbOver(conThumb,tdd,displayContainer);
+    				conThumb.onclick = conUI.thumbOver(conThumbContainer,conThumb,tdd,displayContainer);
 
 					conThumbContainer.className = "conThumbContainer";
 					conThumbContainer.append(conThumb);
@@ -632,8 +631,13 @@ var conUI = {
             }
         }
 	},
-	thumbOver: function(conThumb,tdd,displayContainer){
+	thumbOver: function(conThumbContainer,conThumb,tdd,displayContainer){
 		return function(){
+			var c4 = conThumbContainer.childNodes;
+			for(var i = 0; i < c4.length; i++){
+				c4[i].style.opacity = "1";
+			}
+
 			var divStuffs = "<h2>Item Name: " + tdd.name + "</h2>";
 				divStuffs += "<div class='dvLog'>";
 				divStuffs += "<div class='stHd'>";
@@ -650,6 +654,7 @@ var conUI = {
 				divStuffs += "</div>";
 
 			displayContainer.innerHTML = divStuffs;
+			conThumb.style.opacity = "0.7";
 		}
 	}
 };

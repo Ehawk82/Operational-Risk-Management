@@ -539,10 +539,10 @@ form {
 .adDiv {
 	position: fixed;
 	top:105vh;
-	left:8vw;
+	left:8.1vw;
 	background-color: white;
 	height: 15vh;
-	width: 91vw;
+	width: 83.9vw;
 	display:block;
 	margin: 0;
 	z-index: 6;
@@ -554,7 +554,7 @@ form {
     left: 8.1vw;
     background-color: white;
 	height: 15vh;
-    width: 91.75vw;
+    width: 83.9vw;
     display: block;
     padding: 10px 0;
     margin: 0;
@@ -593,7 +593,7 @@ form {
 	line-height: 30px;
 	margin:5px;
 	text-align: center;
-	cursor: zoom-in;
+	cursor: pointer;
 }
 .conThumbContainer {
 	background-color: slategrey;
@@ -601,23 +601,24 @@ form {
 	overflow-y: auto;
 	overflow-x: hidden;
 	margin: 2px;
+	padding:5px 10px;
 }
 .displayContainer {
-	background-color: white;
+	background-color: slategrey;
 	height: 60vh;
 	overflow-y: auto;
 	overflow-x: hidden;
 	margin: 2px;
 }
 .displayContainer h2 {
-	background-color: grey;
+	background-color: slategrey;
 	width: -webkit-fill-available;
 	margin: 4px 5px;
 	display: -webkit-box;
 	text-indent: 8px;
 }
 .dvLog {
-	background-color: darkgrey;
+	background-color: #eee;
 	height: 92%;
 	width: -webkit-fill-available;
 	margin: 0 5px;
@@ -632,7 +633,7 @@ form {
 	padding: 10px 5px;
 }
 .stBr {
-	width: 100px !important;
+	width: 120px !important;
 	display: inline-grid;
 	margin:0 20px;
 }
@@ -640,12 +641,12 @@ form {
 	background-color: rgba(0,0,0,0.6);
 	color:#eee;
 	height: 21px;
-	width: 100px;
+	width: 120px;
 	font-weight: 800;
 	transform: rotate(180deg);
 }
 .pNotes {
-	background-color: white;
+	background-color: darkgrey;
 	height: 20vh;
 	width: -webkit-fill-available;
 	margin:5px 6px;
@@ -653,6 +654,8 @@ form {
 	transform: rotate(180deg);
 	text-align: right;
 	word-break: wrap;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 /*ID*/
 #statsPage {
