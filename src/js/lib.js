@@ -533,8 +533,7 @@ var cmUI = {
 
             setTimeout(function(){
         		cmUI.doBreather(wBox,i,breathIn,breathOut);
-            },10);
-            
+            },20);
 		}
 	},
 	exitBreathFunc: function(breathPage){
