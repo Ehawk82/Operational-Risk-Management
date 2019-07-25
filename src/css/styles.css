@@ -7,9 +7,9 @@ html, body {
 	margin: 0;
 	height:100vh;
 	width:100vw;
-	background-color: slategrey;
+	background-color: #003E51;
 	font-family: "Helvetica";
-	font-weight: 600;
+	font-weight: 800;
 	letter-spacing: 1px;
 }
 
@@ -120,7 +120,7 @@ form {
 	display: -webkit-inline-box;
 }
 .sItemHolder {
-	box-shadow: 0 0 1px inset black,0 0 1px inset black;
+
 	width:-webkit-fill-available;
 	display: inherit;
 	background-color: white;
@@ -130,20 +130,18 @@ form {
 .sItemHolder span {
 	display: inline-flex;
 	width: content;
-	background-color: slategrey;
+	background-color: #003E51;
 	padding: 10px;
 	margin: 5px;
-	text-shadow: 1px 1px 1px black;
-	box-shadow: 0 0 10px inset black;
 }
 .ps {
 	color: white;
-	padding: 2px;
+	padding: 9px;
 	width: -webkit-fill-available;
-	display: inline-block;
+	display: -webkit-box;
 	height: auto;
 	overflow-y: auto;
-	margin: 2px 1vw;
+	margin: 2px;
 }
 .screenBlocker, .tutorPage {
 	position: fixed;
@@ -168,7 +166,7 @@ form {
 .progress {
   width: 70%;
   margin: 20vh auto;
-  background-color: slategrey;
+  background-color: #003E51;
   box-shadow: 0 0 1px black inset,0 0 2px black inset;
 }
 
@@ -260,7 +258,7 @@ form {
 
 .tds_full {
 	position: fixed;
-	background: rgb(150,150,150);
+	background: #A6B8C1;
 	height: 100vh;
 	width: 100vw;
 	top:0;
@@ -360,6 +358,7 @@ form {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+	
 }
 .hazOuts,.brOuts {
     flex: 2;
@@ -391,6 +390,7 @@ form {
 	display: -webkit-box;
 	width: -webkit-fill-available;
 	height: content;
+
 }
 .ntIns {
 	resize: none;
@@ -407,7 +407,7 @@ form {
     word-wrap:normal;
     color:transparent;
 	box-shadow: 0 0 2px inset #fff,0 0 2px inset #fff,0 0 2px inset #fff;
-	background-color: darkgrey;
+	background-color: #003E51;
 
 }
 
@@ -447,8 +447,9 @@ form {
 .hazLabels,.brLabels {
 	width: 60%;
 	font-size:80%;
+	font-weight: 500;
 	overflow:auto;
-	padding: 6px;
+	padding: 2px 6px;
 	word-wrap: break-word;
 
 }
@@ -563,7 +564,7 @@ form {
 	text-align: center;
 }
 .brWidgetHolder {
-	background-color: darkgrey;
+	background-color: #003E51;
 	width:75vw;
 	height: auto;
     display: grid;
@@ -597,7 +598,7 @@ form {
 	cursor: pointer;
 }
 .conThumbContainer {
-	background-color: slategrey;
+	background-color: #003E51;
 	height: 12vh;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -605,7 +606,7 @@ form {
 	padding:5px 10px;
 }
 .displayContainer {
-	background-color: slategrey;
+	background-color: #003E51;
 	height: auto;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -613,7 +614,7 @@ form {
 	padding: 5px 0;
 }
 .displayContainer h2 {
-	background-color: slategrey;
+	background-color: #003E51;
 	width: -webkit-fill-available;
 	margin: 4px 5px;
 	display: -webkit-box;
@@ -649,7 +650,7 @@ form {
 	transform: rotate(180deg);
 }
 .pNotes {
-	background-color: darkgrey;
+	background-color: #003E51;
 	height: 20vh;
 	width: -webkit-fill-available;
 	margin:5px 6px;
@@ -676,22 +677,23 @@ form {
 
 }
 h1, .heartPage,.breathPage, .climateForge, .tds, .screenBlocker_full,.screenBlocker,.scanPage,.tCell_full button{
-	background: rgba(45,56,64,1);
+	background: #003E51;
 }
 .tCell_full button:disabled{
-	background: rgba(45,56,64,.5);
+	background: #002025;
 }
 .hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels {
     height: initial;
     display: table-cell;
     vertical-align: middle;
 	box-shadow: 0 0 1px inset black,0 0 1px inset black,0 0 1px inset black;
-    background-color: rgba(255,255,255,.5);
+    background-color: #003E51;
+    color:white;
 }
-.conThumb,.hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels,.tds p {
+.sItemHolder span,.sItemHolder,.conThumb,.hazIns,.brIns,.hazOuts,.brOuts,.hazLabels,.brLabels,.tds p {
 	box-shadow: 0 0 1px inset black,0 0 1px inset black,0 0 1px inset black;
 }
-.tds p,.displayContainer, .conThumbContainer,.adDiv,.adDiv_full{
+.tds p,.adDiv,.adDiv_full{
 	box-shadow: 0 0 2px inset black,0 0 2px inset black,0 0 2px inset black;
 }
 form {
@@ -732,5 +734,5 @@ body, .hazIns::-webkit-slider-thumb,.brIns::-webkit-slider-thumb {
   cursor: pointer;
 }
 html,body,.pages, .pages_full{
-	background-color: #999;
+	background-color: #A6B8C1;
 }
